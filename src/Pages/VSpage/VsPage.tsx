@@ -49,21 +49,21 @@ export const VsPage: FC = () => {
         <div className="buttonWrapper">
           <button onClick={() => onclickResult(1)} className="handButton">
             <img
-              src="../../Images/janken_gu.png"
+              src="../../janken_gu.png"
               alt="グー"
               className="handImage"
             />
           </button>
           <button onClick={() => onclickResult(2)} className="handButton">
             <img
-              src="../../Images/janken_choki.png"
+              src="../../janken_choki.png"
               alt="チョキ"
               className="handImage"
             />
           </button>
           <button onClick={() => onclickResult(3)} className="handButton">
             <img
-              src="../../Images/janken_pa.png"
+              src="../../janken_pa.png"
               alt="パー"
               className="handImage"
             />
