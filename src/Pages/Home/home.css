@@ -1,0 +1,43 @@
+.wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  padding-top: 140px;
+  text-align: center;
+}
+.hometitle {
+  font-size: 4rem;
+  color: #000000ad;
+  display: inline-block;
+  background-color: #dddddd;
+  border-radius: 20px;
+  padding: 10px 50px;
+  box-shadow: 5px 5px 5px #1d1b1b;
+}
+.startButton {
+  display: flex;
+  margin: 60px auto;
+  font-size: 44px;
+  padding: 10px 40px;
+  border-radius: 20px;
+  border: solid;
+  background-color: white;
+  box-shadow: 3px 3px 3px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.startButton:hover {
+  background-color: #8effdb;
+  box-shadow: none;
+}
+@media screen and (max-width: 650px) {
+  .wrapper {
+    display: flexbox;
+    justify-content: center;
+  }
+  .hometitle {
+    font-size: 3rem;
+    min-width: none;
+    margin: 0 auto;
+  }
+}

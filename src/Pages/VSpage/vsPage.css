@@ -1,0 +1,91 @@
+.vsDiv {
+  color: #000000ad;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 6rem;
+  padding: 3vh 0;
+}
+.description {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 40px;
+  padding: 10px 40px;
+  border-radius: 30px;
+  background-color: #dddddd;
+  box-shadow: 5px 5px 5px #1d1b1b;
+}
+.handImage {
+  object-fit: cover;
+  height: 80%;
+  width: 80%;
+}
+.handButton {
+  display: inline-block;
+  border-radius: 9999px;
+  height: 14rem;
+  width: 14rem;
+  background-color: white;
+  box-shadow: 0px 5px 0px #4b4b4b;
+  transition: all 0.3s;
+  border-color: #4b4b4b;
+}
+.handButton:hover {
+  background-color: #44b9a7;
+  box-shadow: none;
+  transform: translate3d(0px, 5px, 0px);
+}
+.winCounter {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+@media screen and (max-width: 860px) {
+  .title {
+    margin: 10% auto;
+    padding: 3vh 0;
+  }
+  .description {
+    font-size: 3rem;
+  }
+  .buttonWrapper {
+    margin: 20px;
+    padding: 30px 40px;
+  }
+  .handButton {
+    height: 10rem;
+    width: 10rem;
+  }
+  .winCounter {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .title {
+    font-size: 4rem;
+    margin: 0 auto;
+    padding: 2vh 0;
+    margin-top: 1rem;
+  }
+  .buttonWrapper {
+    display: block;
+    margin: 10px 40px;
+    padding: 10px;
+  }
+  .handButton {
+    display: block;
+    margin: 10px auto;
+    height: 10rem;
+    width: 10rem;
+  }
+}
