@@ -29,7 +29,7 @@ export const Result: FC = () => {
       setMessage("あいこです! ボタンを押して決着をつけよう!");
     } else if (result === "lose") {
       setWinCount(0);
-      setButtonName("初めから");
+      setButtonName("もう一度");
       setMessage("残念…あなたの負けです…");
     }
   }, [count, result]);
@@ -44,12 +44,8 @@ export const Result: FC = () => {
     }
   };
 
-  const onClickVsorHome = () => {
-    if (result === "lose") {
-      navi("/");
-    } else {
-      navi("/vspage", { state: { winCount } });
-    }
+  const onClickVS = () => {
+    navi("/vspage", { state: { winCount } });
   };
   const onClickHome = () => {
     navi("/");
@@ -74,28 +70,16 @@ export const Result: FC = () => {
               <h2 className="resultMessage">{message}</h2>
               <h3 className="resultWinCounter">{winCount}勝</h3>
               <div>
-                {result !== "lose" ? (
+                {
                   <div className="resultButtonWrapper">
-                    <button
-                      onClick={onClickVsorHome}
-                      className="changeResultButton"
-                    >
+                    <button onClick={onClickVS} className="changeResultButton">
                       {buttonName}
                     </button>
                     <button onClick={onClickHome} className="resultToHome">
                       ホームに戻る
                     </button>
                   </div>
-                ) : (
-                  <div className="resultButtonWrapper">
-                    <button
-                      onClick={onClickVsorHome}
-                      className="changeResultButton"
-                    >
-                      {buttonName}
-                    </button>
-                  </div>
-                )}
+                }
               </div>
             </div>
           </div>
