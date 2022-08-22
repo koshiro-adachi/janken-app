@@ -36,11 +36,11 @@ export const Result: FC = () => {
 
   const opponentHandImage = () => {
     if (opponentHand === 1) {
-      return "../../Images/janken_gu.png";
+      return "../../janken_gu.png";
     } else if (opponentHand === 2) {
-      return "../../Images/janken_choki.png";
+      return "../../janken_choki.png";
     } else if (opponentHand === 3) {
-      return "../../Images/janken_pa.png";
+      return "../../janken_pa.png";
     }
   };
 
