@@ -5,11 +5,13 @@ import { ChangeResult } from "./ChangeResult";
 import "./vsPage.css";
 
 export const VsPage: FC = () => {
-  const [winCount,setWinCount]=useState(0);
+  const [winCount, setWinCount] = useState(0);
   const [win, setWin] = useState(false);
   const [aiko, setAiko] = useState(false);
   const [lose, setLose] = useState(false);
   const [opponentHand, setOpponentHand] = useState(1);
+  const [totalPoint, setTotalPoint] = useState(100);
+  const [betPoint, setBetPoint] = useState(0);
 
   // const navi = useNavigate();
   const onclickResult = (num: number) => {
@@ -19,7 +21,9 @@ export const VsPage: FC = () => {
       setAiko(false);
       setLose(false);
       setOpponentHand(answer.opponentHand);
-      setWinCount(winCount+1);
+      setWinCount(winCount + 1);
+      setTotalPoint(totalPoint + betPoint * 2);
+      setBetPoint(0);
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -31,6 +35,7 @@ export const VsPage: FC = () => {
       setLose(true);
       setOpponentHand(answer.opponentHand);
       setWinCount(0);
+      setBetPoint(0);
     }
   };
   return (
@@ -43,7 +48,12 @@ export const VsPage: FC = () => {
           opponentHand={opponentHand}
           winCount={winCount}
         />
-        <BetButton/>
+        <BetButton
+          totalPoint={totalPoint}
+          setTotalPoint={setTotalPoint}
+          betPoint={betPoint}
+          setBetPoint={setBetPoint}
+        />
         <div className="buttonWrapper">
           <button onClick={() => onclickResult(1)} className="handButton">
             <img src="../../janken_gu.png" alt="グー" className="handImage" />

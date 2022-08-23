@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-
-export const BetButton = () => {
-    const [totalPoint,setTotalPoint]=useState(100);
-    const [betPoint,setBetPoint]=useState(0);
-    const onClickPlusBet=()=>{
-        if(totalPoint===0){
-            return
-        }else{
-            setTotalPoint(totalPoint-10)
-            setBetPoint(betPoint+10);
-        }
+export const BetButton = ({
+  totalPoint,
+  setTotalPoint,
+  betPoint,
+  setBetPoint,
+}) => {
+  const onClickPlusBet = () => {
+    if (totalPoint === 0) {
+      return;
+    } else {
+      setTotalPoint(totalPoint - 10);
+      setBetPoint(betPoint + 10);
     }
-    const onClickMinusBet=()=>{
-        if(betPoint===0){
-            return
-        }else{
-            setTotalPoint(totalPoint+10)
-            setBetPoint(betPoint-10);
-        }
+  };
+  const onClickMinusBet = () => {
+    if (betPoint === 0) {
+      return;
+    } else {
+      setTotalPoint(totalPoint + 10);
+      setBetPoint(betPoint - 10);
     }
+  };
   return (
     <>
       <dl>
