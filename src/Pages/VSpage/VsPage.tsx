@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { jankenRandom } from "../../hooks/jankenRandom";
+import { BetButton } from "./BetButton";
 import { ChangeResult } from "./ChangeResult";
 import "./vsPage.css";
 
@@ -42,6 +43,7 @@ export const VsPage: FC = () => {
           opponentHand={opponentHand}
           winCount={winCount}
         />
+        <BetButton/>
         <div className="buttonWrapper">
           <button onClick={() => onclickResult(1)} className="handButton">
             <img src="../../janken_gu.png" alt="グー" className="handImage" />
