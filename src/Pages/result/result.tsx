@@ -3,9 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./result.css";
 
 type CustomizedState = {
-  opponentHand: number;
   result: string;
   count: number;
+  maxWinCount: number;
+  totalPoint: number;
 };
 
 export const Result: FC = () => {
@@ -15,7 +16,7 @@ export const Result: FC = () => {
   const navi = useNavigate();
   const location = useLocation();
   const state = location.state as CustomizedState;
-  const { opponentHand, result, count } = state;
+  const { result, count, maxWinCount, totalPoint } = state;
   console.log(count);
 
   useEffect(() => {
@@ -34,16 +35,6 @@ export const Result: FC = () => {
     }
   }, [count, result]);
 
-  const opponentHandImage = () => {
-    if (opponentHand === 1) {
-      return "../../janken_gu.png";
-    } else if (opponentHand === 2) {
-      return "../../janken_choki.png";
-    } else if (opponentHand === 3) {
-      return "../../janken_pa.png";
-    }
-  };
-
   const onClickVS = () => {
     navi("/vspage", { state: { winCount } });
   };
@@ -56,19 +47,13 @@ export const Result: FC = () => {
         <h1 className="resultTitle">結果</h1>
         <div className="resultWrapper2">
           <div className="leftResultItems">
-            <div className="positionAbsolute">
-              <h2 className="resultHandTitle">相手の出した手</h2>
-              <img
-                src={opponentHandImage()}
-                alt="相手の手"
-                className="resultHandImage"
-              />
-            </div>
+            <h3>{totalPoint}</h3>
+            <h3>{maxWinCount}</h3>
           </div>
           <div className="rightResultItems">
             <div className="positionAbsolute">
               <h2 className="resultMessage">{message}</h2>
-              <h3 className="resultWinCounter">{winCount}勝</h3>
+              <h3 className="resultWinCounter">{count}勝</h3>
               <div>
                 {
                   <div className="resultButtonWrapper">

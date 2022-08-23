@@ -6,6 +6,7 @@ import "./vsPage.css";
 
 export const VsPage: FC = () => {
   const [winCount, setWinCount] = useState(0);
+  const [maxWinCount, setMaxWinCount] = useState(0);
   const [win, setWin] = useState(false);
   const [aiko, setAiko] = useState(false);
   const [lose, setLose] = useState(false);
@@ -24,10 +25,14 @@ export const VsPage: FC = () => {
       setWinCount(winCount + 1);
       setTotalPoint(totalPoint + betPoint * 2);
       setBetPoint(0);
+      if (winCount > maxWinCount) {
+        setMaxWinCount(winCount);
+      }
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
       setWin(false);
+      setWinCount(winCount);
       setOpponentHand(answer.opponentHand);
     } else if (answer?.result === "lose") {
       setWin(false);
@@ -47,6 +52,8 @@ export const VsPage: FC = () => {
           lose={lose}
           opponentHand={opponentHand}
           winCount={winCount}
+          maxWinCount={maxWinCount}
+          totalPoint={totalPoint}
         />
         <BetButton
           totalPoint={totalPoint}

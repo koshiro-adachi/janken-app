@@ -1,4 +1,13 @@
-export const BetButton = ({
+import { Dispatch, FC, SetStateAction } from "react";
+
+type Prop = {
+  totalPoint: number;
+  setTotalPoint: Dispatch<SetStateAction<number>>;
+  betPoint: number;
+  setBetPoint: Dispatch<SetStateAction<number>>;
+};
+
+export const BetButton: FC<Prop> = ({
   totalPoint,
   setTotalPoint,
   betPoint,
