@@ -1,17 +1,10 @@
 import { FC, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { jankenRandom } from "../../hooks/jankenRandom";
 import { ChangeResult } from "./ChangeResult";
 import "./vsPage.css";
 
-type CustomizedState = {
-  winCount: number;
-};
-
 export const VsPage: FC = () => {
-  const location = useLocation();
-  const state = location.state as CustomizedState;
-  const count = state?.winCount || 0;
+  const [winCount,setWinCount]=useState(0);
   const [win, setWin] = useState(false);
   const [aiko, setAiko] = useState(false);
   const [lose, setLose] = useState(false);
@@ -25,13 +18,7 @@ export const VsPage: FC = () => {
       setAiko(false);
       setLose(false);
       setOpponentHand(answer.opponentHand);
-      // navi("/result", {
-      //   state: {
-      //     opponentHand: answer.opponentHand,
-      //     result: answer.result,
-      //     count: count,
-      //   },
-      // });
+      setWinCount(winCount+1);
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -42,13 +29,7 @@ export const VsPage: FC = () => {
       setAiko(false);
       setLose(true);
       setOpponentHand(answer.opponentHand);
-      // navi("/result", {
-      //   state: {
-      //     opponentHand: answer.opponentHand,
-      //     result: answer.result,
-      //     count: count,
-      //   },
-      // });
+      setWinCount(0);
     }
   };
   return (
@@ -59,6 +40,7 @@ export const VsPage: FC = () => {
           aiko={aiko}
           lose={lose}
           opponentHand={opponentHand}
+          winCount={winCount}
         />
         <div className="buttonWrapper">
           <button onClick={() => onclickResult(1)} className="handButton">
@@ -75,7 +57,7 @@ export const VsPage: FC = () => {
             <img src="../../janken_pa.png" alt="パー" className="handImage" />
           </button>
         </div>
-        <h2 className="winCounter">現在{count}勝目です</h2>
+        <h2 className="winCounter">現在{winCount}勝目です</h2>
       </div>
     </>
   );

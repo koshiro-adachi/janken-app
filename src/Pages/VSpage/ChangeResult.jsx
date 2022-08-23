@@ -1,4 +1,19 @@
-export const ChangeResult = ({ win, aiko, lose, opponentHand }) => {
+import { useNavigate } from "react-router-dom";
+
+export const ChangeResult = ({ win, aiko, lose, opponentHand,winCount }) => {
+  const navi = useNavigate();
+  const onClickHome = () => {
+    navi("/");
+  };
+  const onClickResult = (props) => {
+    navi("/result", {
+      state: {
+        opponentHand: opponentHand,
+        result: props,
+        count: winCount,
+      },
+    });
+  };
   const opponentHandImage = () => {
     if (opponentHand === 1) {
       return "../../janken_gu.png";
@@ -11,13 +26,13 @@ export const ChangeResult = ({ win, aiko, lose, opponentHand }) => {
   if (win) {
     return (
       <div>
-        <button>ホーム</button>
+        <button onClick={onClickHome}>ホーム</button>
         <div>
           <img src={opponentHandImage} alt="相手の手" />
           <h2>勝利!</h2>
           <h2>相手の手</h2>
         </div>
-        <button>結果</button>
+        <button onClick={()=>onClickResult('win')}>結果</button>
       </div>
     );
   } else if (aiko) {
@@ -31,13 +46,13 @@ export const ChangeResult = ({ win, aiko, lose, opponentHand }) => {
   } else if (lose) {
     return (
       <div>
-        <button>ホーム</button>
+        <button onClick={onClickHome}>ホーム</button>
         <div>
           <img src={opponentHandImage} alt="相手の手" />
           <h2>敗北…</h2>
           <h2>相手の手</h2>
         </div>
-        <button>結果</button>
+        <button onClick={()=>onClickResult('lose')}>結果</button>
       </div>
     );
   } else {
