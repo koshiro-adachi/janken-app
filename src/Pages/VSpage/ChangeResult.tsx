@@ -74,9 +74,9 @@ export const ChangeResult: FC<Prop> = ({
     );
   } else {
     return (
-      <div>
+      <div className="defaultChangeWrapper">
         <h2>じゃんけん</h2>
-        <h2>手を選んでね</h2>
+        <h3>手を選んでね</h3>
       </div>
     );
   }

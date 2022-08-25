@@ -26,16 +26,22 @@ export const BetButton: FC<Prop> = memo(
       }
     };
     return (
-      <>
-        <dl>
-          <dt>total point</dt>
-          <dd>{`${totalPoint} point`}</dd>
-          <dt>bet point</dt>
-          <dd>{`${betPoint} point`}</dd>
-        </dl>
-        <button onClick={onClickPlusBet}>bet +10point</button>
-        <button onClick={onClickMinusBet}>bet -10point</button>
-      </>
+      <div className="betButtonWrapper">
+        <div className="pointWrapper">
+          <dl>
+            <dt>total point</dt>
+            <dd>{`${totalPoint} point`}</dd>
+            <dt>bet point</dt>
+            <dd>{`${betPoint} point`}</dd>
+          </dl>
+        </div>
+        <div className="betButton">
+          <div>
+            <button onClick={onClickPlusBet}>bet +10point</button>
+            <button onClick={onClickMinusBet}>bet -10point</button>
+          </div>
+        </div>
+      </div>
     );
   }
 );

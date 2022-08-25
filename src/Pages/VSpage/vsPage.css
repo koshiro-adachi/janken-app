@@ -5,20 +5,109 @@
   height: 100vh;
   box-sizing: border-box;
 }
-/* vsPageの上半分 */
 .vsPageHalfTop{
   display: flex;
   justify-content: space-around;
+  height: 250px;
+  margin-top: 20px;
 }
-/* 上半分の左 */
 .vsPageLeft{
   width: 45%;
+  border: solid;
+  border-radius: 10px;
+  margin-left: 10px;
 }
-/* 上半分の右 */
+.changeWrapper {
+  width: 100%;
+}
+.changeImageWrapper {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+.changeImageWrapper h2{
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.changeImageWrapper img{
+  width: auto;
+  height: 160px;
+}
+.changeButtonWrappeer{
+  display: flex;
+  justify-content: space-around;
+}
+.changeButton{
+  font-size: 1.5rem;
+  border: solid;
+  border-radius: 10px;
+  background-color: #dddddd;
+  transition: all 0.3s;
+}
+.changeButton:hover{
+  border-color: #4b4b4b;
+  color: white;
+  background-color: #44b9a7;
+}
+
+.defaultChangeWrapper{
+  text-align: center;
+}
+.defaultChangeWrapper h2{
+  font-size: 3rem;
+} 
+.defaultChangeWrapper h3{
+  font-size: 2rem;
+} 
+/* -----vsPageLeft */
 .vsPageRight{
   width: 45%;
   border: solid;
+  border-radius: 10px;
+  margin-right: 10px;
 }
+.judge{
+  text-align: center;
+  background-color: #dddddd;
+  margin: 10px 30%;
+  border: solid;
+  border-radius: 10px;
+}
+.vsPageRight h3{
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+.betButtonWrapper{
+  display: flex;
+  justify-content: space-around;
+}
+.pointWrapper{
+  color: #1d1b1b;
+  font-size: 1.5rem;
+}
+.betButton{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.betButton div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.betButton button{
+  width: 120px;
+  padding: 10px;
+  margin: 5px;
+}
+/* -----vsPageRight */
 .buttonWrapper {
   display: flex;
   justify-content: space-around;
@@ -53,31 +142,3 @@
   margin: 0 auto;
   font-size: 2rem;
 }
-/* -----ChangeResult----- */
-.changeWrapper {
-  border: solid;
-  width: 100%;
-}
-.changeImageWrapper {
-  text-align: center;
-  position: relative;
-}
-.changeImageWrapper h2{
-  font-size: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.changeImageWrapper img{
-  width: 200px;
-  height: auto;
-}
-.opponentHand{
-  text-align: center;
-}
-.changeButtonWrappeer{
-  display: flex;
-  justify-content: space-around;
-}
-.changeButton{}
