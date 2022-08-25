@@ -6,7 +6,6 @@ type Prop = {
   aiko: boolean;
   lose: boolean;
   opponentHand: number;
-  winCount: number;
   maxWinCount: number;
   totalPoint: number;
 };
@@ -16,7 +15,6 @@ export const ChangeResult: FC<Prop> = ({
   aiko,
   lose,
   opponentHand,
-  winCount,
   maxWinCount,
   totalPoint,
 }) => {
@@ -24,11 +22,9 @@ export const ChangeResult: FC<Prop> = ({
   const onClickHome = () => {
     navi("/");
   };
-  const onClickResult = (props: string) => {
+  const onClickResult = () => {
     navi("/result", {
       state: {
-        result: props,
-        count: winCount,
         maxWinCount: maxWinCount,
         totalPoint: totalPoint,
       },
@@ -53,7 +49,7 @@ export const ChangeResult: FC<Prop> = ({
           <h2>勝利!</h2>
           <h2>相手の手</h2>
         </div>
-        <button onClick={() => onClickResult("win")}>終了する</button>
+        <button onClick={onClickResult}>終了する</button>
       </div>
     );
   } else if (aiko) {
@@ -73,7 +69,7 @@ export const ChangeResult: FC<Prop> = ({
           <h2>敗北…</h2>
           <h2>相手の手</h2>
         </div>
-        <button onClick={() => onClickResult("lose")}>終了する</button>
+        <button onClick={onClickResult}>終了する</button>
       </div>
     );
   } else {

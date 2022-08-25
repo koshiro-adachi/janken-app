@@ -1,10 +1,27 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { jankenRandom } from "../../hooks/jankenRandom";
 import { BetButton } from "./BetButton";
 import { ChangeResult } from "./ChangeResult";
 import "./vsPage.css";
 
+type CustomizedState = {
+  backMaxWinCount: number;
+  backPoint: number;
+};
+
 export const VsPage: FC = () => {
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.state) {
+      return;
+    } else {
+      const state = location.state as CustomizedState;
+      const { backPoint, backMaxWinCount } = state;
+      setMaxWinCount(backMaxWinCount);
+      setTotalPoint(backPoint);
+    }
+  }, []);
   const [winCount, setWinCount] = useState(0);
   const [maxWinCount, setMaxWinCount] = useState(0);
   const [win, setWin] = useState(false);
@@ -15,6 +32,11 @@ export const VsPage: FC = () => {
   const [betPoint, setBetPoint] = useState(0);
 
   // const navi = useNavigate();
+  useEffect(() => {
+    if (winCount > maxWinCount) {
+      setMaxWinCount(winCount);
+    }
+  }, [winCount]);
   const onclickResult = (num: number) => {
     const answer = jankenRandom(num);
     if (answer?.result === "win") {
@@ -25,9 +47,6 @@ export const VsPage: FC = () => {
       setWinCount(winCount + 1);
       setTotalPoint(totalPoint + betPoint * 2);
       setBetPoint(0);
-      if (winCount > maxWinCount) {
-        setMaxWinCount(winCount);
-      }
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -51,7 +70,6 @@ export const VsPage: FC = () => {
           aiko={aiko}
           lose={lose}
           opponentHand={opponentHand}
-          winCount={winCount}
           maxWinCount={maxWinCount}
           totalPoint={totalPoint}
         />
@@ -77,6 +95,7 @@ export const VsPage: FC = () => {
           </button>
         </div>
         <h2 className="winCounter">現在{winCount}勝目です</h2>
+        <h2>{maxWinCount}</h2>
       </div>
     </>
   );
