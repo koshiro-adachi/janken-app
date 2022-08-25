@@ -19,9 +19,12 @@ export const ChangeResult: FC<Prop> = ({
   totalPoint,
 }) => {
   const navi = useNavigate();
+
   const onClickHome = () => {
     navi("/");
   };
+  //homeに戻る
+
   const onClickResult = () => {
     navi("/result", {
       state: {
@@ -30,26 +33,37 @@ export const ChangeResult: FC<Prop> = ({
       },
     });
   };
+  //終了して結果ページに遷移
+
   const opponentHandImage = (): string => {
     if (opponentHand === 1) {
       return "../../janken_gu.png";
     } else if (opponentHand === 2) {
       return "../../janken_choki.png";
-    } else if (opponentHand === 3) {
+    } else {
       return "../../janken_pa.png";
     }
-    return "error";
   };
+  //相手の手を表示
+
   if (win) {
     return (
-      <div>
-        <button onClick={onClickHome}>ホーム</button>
-        <div>
-          <img src={opponentHandImage()} alt="相手の手" />
+      <div className="changeWrapper">
+        <div className="changeImageWrapper">
           <h2>勝利!</h2>
+          <img
+            src={opponentHandImage()}
+            alt="相手の手"
+            className="changeImage"
+          />
           <h2>相手の手</h2>
         </div>
-        <button onClick={onClickResult}>終了する</button>
+        <button onClick={onClickHome} className="changeButton">
+          ホーム
+        </button>
+        <button onClick={onClickResult} className="changeButton">
+          終了する
+        </button>
       </div>
     );
   } else if (aiko) {
@@ -62,13 +76,13 @@ export const ChangeResult: FC<Prop> = ({
     );
   } else if (lose) {
     return (
-      <div>
-        <button onClick={onClickHome}>ホーム</button>
+      <div className="changeWrapper">
         <div>
-          <img src={opponentHandImage()} alt="相手の手" />
           <h2>敗北…</h2>
+          <img src={opponentHandImage()} alt="相手の手" />
           <h2>相手の手</h2>
         </div>
+        <button onClick={onClickHome}>ホーム</button>
         <button onClick={onClickResult}>終了する</button>
       </div>
     );
@@ -80,4 +94,5 @@ export const ChangeResult: FC<Prop> = ({
       </div>
     );
   }
+  //勝敗で表示を変える
 };

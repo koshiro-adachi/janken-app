@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Result } from "../Pages/result/result";
+import { Result } from "../Pages/Result/Result";
 import { Home } from "../Pages/Home/Home";
 import { VsPage } from "../Pages/VSpage/VsPage";
 

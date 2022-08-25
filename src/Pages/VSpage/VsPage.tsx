@@ -11,17 +11,6 @@ type CustomizedState = {
 };
 
 export const VsPage: FC = () => {
-  const location = useLocation();
-  useEffect(() => {
-    if (!location.state) {
-      return;
-    } else {
-      const state = location.state as CustomizedState;
-      const { backPoint, backMaxWinCount } = state;
-      setMaxWinCount(backMaxWinCount);
-      setTotalPoint(backPoint);
-    }
-  }, []);
   const [winCount, setWinCount] = useState(0);
   const [maxWinCount, setMaxWinCount] = useState(0);
   const [win, setWin] = useState(false);
@@ -31,14 +20,31 @@ export const VsPage: FC = () => {
   const [totalPoint, setTotalPoint] = useState(100);
   const [betPoint, setBetPoint] = useState(0);
 
-  // const navi = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.state) {
+      setMaxWinCount(0);
+      setTotalPoint(100);
+    } else {
+      const state = location.state as CustomizedState;
+      const { backPoint, backMaxWinCount } = state;
+      setMaxWinCount(backMaxWinCount);
+      setTotalPoint(backPoint);
+    }
+  }, []);
+  //初回レンダリング時にResult.tsxからの状態を引き継ぐ設定
+
   useEffect(() => {
     if (winCount > maxWinCount) {
       setMaxWinCount(winCount);
     }
   }, [winCount]);
+  //winCountに応じてmaxWinCountを更新
+
   const onclickResult = (num: number) => {
     const answer = jankenRandom(num);
+    //じゃんけんをして選んだ手に応じて結果と相手の手を返す
+
     if (answer?.result === "win") {
       setWin(true);
       setAiko(false);
@@ -95,7 +101,7 @@ export const VsPage: FC = () => {
           </button>
         </div>
         <h2 className="winCounter">現在{winCount}勝目です</h2>
-        <h2>{maxWinCount}</h2>
+        <h2>{`最大連続勝利回数　${maxWinCount}回`}</h2>
       </div>
     </>
   );

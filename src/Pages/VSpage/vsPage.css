@@ -5,17 +5,6 @@
   height: 100vh;
   box-sizing: border-box;
 }
-.title {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 6rem;
-  padding: 3vh 0;
-}
-.description {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 2rem;
-}
 .buttonWrapper {
   display: flex;
   justify-content: space-around;
@@ -49,46 +38,4 @@
   text-align: center;
   margin: 0 auto;
   font-size: 2rem;
-}
-@media screen and (max-width: 860px) {
-  .title {
-    margin: 10% auto;
-    padding: 3vh 0;
-  }
-  .description {
-    font-size: 3rem;
-  }
-  .buttonWrapper {
-    margin: 20px;
-    padding: 30px 40px;
-  }
-  .handButton {
-    height: 10rem;
-    width: 10rem;
-  }
-  .winCounter {
-    font-size: 3rem;
-  }
-}
-@media screen and (max-width: 610px) {
-  .title {
-    font-size: 4rem;
-    margin: 0 auto;
-    padding: 2vh 0;
-    margin-top: 1rem;
-  }
-  .buttonWrapper {
-    display: block;
-    margin: 10px 40px;
-    padding: 10px;
-  }
-  .handButton {
-    display: block;
-    margin: 10px auto;
-    height: 10rem;
-    width: 10rem;
-  }
-  .description {
-    font-size: 2rem;
-  }
 }
