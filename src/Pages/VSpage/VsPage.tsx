@@ -108,8 +108,10 @@ export const VsPage: FC = () => {
             <img src="../../janken_pa.png" alt="パー" className="handImage" />
           </button>
         </div>
-        <h2 className="winCounter">現在{winCount}勝目です</h2>
-        <h2>{`最大連続勝利回数　${maxWinCount}回`}</h2>
+        <div className="bottomMessage">
+          <h2 className="winCounter">現在{winCount}勝目です</h2>
+          <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
+        </div>
       </div>
     </>
   );
