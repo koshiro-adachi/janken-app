@@ -28,12 +28,12 @@ export const BetButton: FC<Prop> = memo(
     return (
       <div className="betButtonWrapper">
         <div className="pointWrapper">
-          <dl>
-            <dt>total point</dt>
-            <dd>{`${totalPoint} point`}</dd>
-            <dt>bet point</dt>
-            <dd>{`${betPoint} point`}</dd>
-          </dl>
+          <div>
+            <h3 className="pointTitle">total point</h3>
+            <h3>{`${totalPoint} point`}</h3>
+            <h3 className="pointTitle">bet point</h3>
+            <h3>{`${betPoint} point`}</h3>
+          </div>
         </div>
         <div className="betButton">
           <div>

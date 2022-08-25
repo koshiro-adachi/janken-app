@@ -5,13 +5,13 @@
   height: 100vh;
   box-sizing: border-box;
 }
-.vsPageHalfTop{
+.vsPageHalfTop {
   display: flex;
   justify-content: space-around;
   height: 250px;
   margin-top: 20px;
 }
-.vsPageLeft{
+.vsPageLeft {
   width: 45%;
   border: solid;
   border-radius: 10px;
@@ -25,87 +25,129 @@
   position: relative;
   padding: 10px;
 }
-.changeImageWrapper h2{
+.changeImageWrapper h2 {
   font-size: 60px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.changeImageWrapper img{
+.changeImageWrapper img {
   width: auto;
   height: 160px;
 }
-.changeButtonWrappeer{
+.changeButtonWrappeer {
   display: flex;
   justify-content: space-around;
 }
-.changeButton{
+.changeButton {
   font-size: 1.5rem;
   border: solid;
   border-radius: 10px;
   background-color: #dddddd;
   transition: all 0.3s;
 }
-.changeButton:hover{
+.changeButton:hover {
   border-color: #4b4b4b;
   color: white;
   background-color: #44b9a7;
 }
 
-.defaultChangeWrapper{
+.defaultChangeWrapper {
   text-align: center;
 }
-.defaultChangeWrapper h2{
+.defaultChangeWrapper h2 {
   font-size: 3rem;
-} 
-.defaultChangeWrapper h3{
+}
+.defaultChangeWrapper h3 {
   font-size: 2rem;
-} 
+}
 /* -----vsPageLeft */
-.vsPageRight{
+.vsPageRight {
   width: 45%;
   border: solid;
   border-radius: 10px;
   margin-right: 10px;
 }
-.judge{
+.judgeWrapper {
+  height: 40%;
+}
+.red{
+  color: rgb(236 84 84);
+}
+.green{
+  color: rgb(59 208 65)
+}
+.blue{
+  color: rgb(58 132 232);
+}
+.judge {
+  font-size: 1.3rem;
   text-align: center;
   background-color: #dddddd;
   margin: 10px 30%;
   border: solid;
   border-radius: 10px;
 }
-.vsPageRight h3{
+.vsPageRight h3 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0;
   margin: 0;
 }
-.betButtonWrapper{
+.betButtonWrapper {
   display: flex;
-  justify-content: space-around;
+  height: 50%;
 }
-.pointWrapper{
+.pointWrapper {
   color: #1d1b1b;
-  font-size: 1.5rem;
+  width: 50%;
+  text-align: center;
+  position: relative;
 }
-.betButton{
+.pointWrapper div {
+  height: 100%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pointTitle {
+  background-color: #dddddd;
+  border-radius: 10%;
+}
+.pointWrapper h3 {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 10px;
+}
+.betButton {
+  width: 50%;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-.betButton div{
+.betButton div {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.betButton button{
-  width: 120px;
-  padding: 10px;
-  margin: 5px;
+.betButton button {
+  font-size: 1rem;
+  font-weight: 600;
+  width: 150px;
+  padding: 5px 10px;
+  margin: 10px;
+  border: solid;
+  background-color: white;
+  transition: all 0.2s;
+}
+.betButton button:hover {
+  background-color: #44b9a7;
+  color: aliceblue;
+  border-color: #4b4b4b;
 }
 /* -----vsPageRight */
 .buttonWrapper {
