@@ -46,44 +46,30 @@ export const ChangeResult: FC<Prop> = ({
   };
   //相手の手を表示
 
-  if (win) {
+  if (win || lose) {
     return (
       <div className="changeWrapper">
         <div className="changeImageWrapper">
-          <h2>勝利!</h2>
-          <img
-            src={opponentHandImage()}
-            alt="相手の手"
-            className="changeImage"
-          />
           <h2>相手の手</h2>
+          <img src={opponentHandImage()} alt="相手の手" />
         </div>
-        <button onClick={onClickHome} className="changeButton">
-          ホーム
-        </button>
-        <button onClick={onClickResult} className="changeButton">
-          終了する
-        </button>
+        <div className="changeButtonWrappeer">
+          <button onClick={onClickHome} className="changeButton">
+            ホーム
+          </button>
+          <button onClick={onClickResult} className="changeButton">
+            終了する
+          </button>
+        </div>
       </div>
     );
   } else if (aiko) {
     return (
-      <div>
-        <img src={opponentHandImage()} alt="相手の手" />
-        <h2>あいこです</h2>
-        <h2>もう一度手を選んでね</h2>
-      </div>
-    );
-  } else if (lose) {
-    return (
       <div className="changeWrapper">
-        <div>
-          <h2>敗北…</h2>
-          <img src={opponentHandImage()} alt="相手の手" />
+        <div className="changeImageWrapper">
           <h2>相手の手</h2>
+          <img src={opponentHandImage()} alt="相手の手" />
         </div>
-        <button onClick={onClickHome}>ホーム</button>
-        <button onClick={onClickResult}>終了する</button>
       </div>
     );
   } else {

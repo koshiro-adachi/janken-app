@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { jankenRandom } from "../../hooks/jankenRandom";
 import { BetButton } from "./BetButton";
 import { ChangeResult } from "./ChangeResult";
+import { Judge } from "./Judge";
 import "./vsPage.css";
 
 type CustomizedState = {
@@ -71,20 +72,27 @@ export const VsPage: FC = () => {
   return (
     <>
       <div className="vsDiv">
-        <ChangeResult
-          win={win}
-          aiko={aiko}
-          lose={lose}
-          opponentHand={opponentHand}
-          maxWinCount={maxWinCount}
-          totalPoint={totalPoint}
-        />
-        <BetButton
-          totalPoint={totalPoint}
-          setTotalPoint={setTotalPoint}
-          betPoint={betPoint}
-          setBetPoint={setBetPoint}
-        />
+        <div className="vsPageHalfTop">
+          <div className="vsPageLeft">
+            <ChangeResult
+              win={win}
+              aiko={aiko}
+              lose={lose}
+              opponentHand={opponentHand}
+              maxWinCount={maxWinCount}
+              totalPoint={totalPoint}
+            />
+          </div>
+          <div className="vsPageRight">
+            <Judge win={win} aiko={aiko} lose={lose} />
+            <BetButton
+              totalPoint={totalPoint}
+              setTotalPoint={setTotalPoint}
+              betPoint={betPoint}
+              setBetPoint={setBetPoint}
+            />
+          </div>
+        </div>
         <div className="buttonWrapper">
           <button onClick={() => onclickResult(1)} className="handButton">
             <img src="../../janken_gu.png" alt="グー" className="handImage" />
