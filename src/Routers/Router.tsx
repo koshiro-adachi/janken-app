@@ -4,6 +4,8 @@ import { Result } from "../Pages/Result/Result";
 import { Home } from "../Pages/Home/Home";
 import { VsPage } from "../Pages/VSpage/VsPage";
 
+//Resultに変更
+
 export const Router: FC = () => {
   return (
     <div>
