@@ -25,27 +25,19 @@ export const Result: FC = () => {
     <>
       <div className="resultWrapper1">
         <h1 className="resultTitle">結果</h1>
-        <div className="resultWrapper2">
-          <div className="leftResultItems">
+        <div className="resultMain">
+          <h2 className="resultMessage">お疲れさまでした</h2>
+          <div className="pointResult">
             <h3>{`total Point: ${totalPoint}point`}</h3>
             <h3>{`最大連続勝利回数: ${maxWinCount}回`}</h3>
           </div>
-          <div className="rightResultItems">
-            <div className="positionAbsolute">
-              <h2 className="resultMessage">お疲れさまでした</h2>
-              <div>
-                {
-                  <div className="resultButtonWrapper">
-                    <button onClick={onClickVS} className="changeResultButton">
-                      試合に戻る
-                    </button>
-                    <button onClick={onClickHome} className="resultToHome">
-                      ホームに戻る
-                    </button>
-                  </div>
-                }
-              </div>
-            </div>
+          <div className="resultButtonWrapper">
+            <button onClick={onClickVS} className="changeResultButton">
+              試合に戻る
+            </button>
+            <button onClick={onClickHome} className="resultToHome">
+              ホームに戻る
+            </button>
           </div>
         </div>
       </div>
