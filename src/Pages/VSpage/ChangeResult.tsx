@@ -26,7 +26,7 @@ export const ChangeResult: FC<Prop> = ({
   //homeに戻る
 
   const onClickResult = () => {
-    navi("/result", {
+    navi("/finish", {
       state: {
         maxWinCount: maxWinCount,
         totalPoint: totalPoint,

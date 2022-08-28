@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./result.css";
+import "./finish.css";
 
 type CustomizedState = {
   maxWinCount: number;
   totalPoint: number;
 };
 
-export const Result: FC = () => {
+export const Finish: FC = () => {
   const navi = useNavigate();
   const location = useLocation();
   const state = location.state as CustomizedState;
