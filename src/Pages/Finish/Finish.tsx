@@ -14,15 +14,18 @@ export const Finish: FC = () => {
   const { maxWinCount, totalPoint } = state;
 
   const onClickVS = () => {
+    document.body.style.backgroundColor="#ffffff"
     navi("/vspage", {
       state: { backPoint: totalPoint, backMaxWinCount: maxWinCount },
     });
   };
   const onClickHome = () => {
+    document.body.style.backgroundColor="#ffffff"
     navi("/");
   };
   return (
     <>
+     <div className="resultBody">
       <div className="resultWrapper1">
         <h1 className="resultTitle">結果</h1>
         <div className="resultMain">
@@ -40,6 +43,7 @@ export const Finish: FC = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

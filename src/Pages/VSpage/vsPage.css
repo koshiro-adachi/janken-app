@@ -1,6 +1,5 @@
 .vsDiv {
   color: #000000ad;
-  background-color: rgb(255, 255, 255);
   width: auto;
   height: 100vh;
   box-sizing: border-box;
@@ -161,7 +160,7 @@
   height: 200px;
 }
 .handImage {
-  object-fit: cover;
+  object-fit: contain;
   height: 80%;
   width: 80%;
 }
