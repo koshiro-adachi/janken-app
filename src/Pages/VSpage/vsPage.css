@@ -1,7 +1,8 @@
 .vsDiv {
   color: #000000ad;
   width: auto;
-  height: 90vh;
+  height: 85vh;
+  margin-top: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
@@ -17,6 +18,7 @@
   border: solid;
 }
 .changeImageWrapper {
+  height: 100%;
   text-align: center;
   position: relative;
   padding: 10px;
@@ -36,7 +38,7 @@
 .changeButtonWrappeer {
   display: flex;
   justify-content: space-around;
-  height: 16%;
+  height: 15%;
   align-items: center;
 }
 .changeButton {
@@ -70,8 +72,16 @@
   border: solid;
   border-radius: 10px;
   margin-right: 10px;
+  height: 100%;
+}
+.vsPageRightTop {
+  height: 50%;
 }
 .judgeWrapper {
+  height: 150px;
+}
+.judgeWrapper span {
+  font-size: 2rem;
 }
 .red {
   color: rgb(236 84 84);
@@ -86,7 +96,7 @@
   font-size: 1.3rem;
   text-align: center;
   background-color: #dddddd;
-  margin: 10px 30%;
+  margin: 20px 30%;
   border: solid;
   border-radius: 10px;
 }
@@ -98,14 +108,12 @@
 }
 .betButtonWrapper {
   display: flex;
+  justify-content: space-evenly;
 }
 .pointWrapper {
   color: #1d1b1b;
-  width: 50%;
+  width: 120px;
   text-align: center;
-}
-.pointWrapper div {
-  height: 100%;
 }
 .pointTitle {
   background-color: #dddddd;
@@ -117,12 +125,10 @@
   padding: 0 10px;
 }
 .betButton {
-  width: 50%;
+  width: 120px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-}
-.betButton div {
 }
 .betButton button {
   font-size: 1rem;
@@ -139,16 +145,17 @@
   color: aliceblue;
   border-color: #4b4b4b;
 }
-/* -----vsPageRight */
+/* -----vsPageRight ---judge---betButton*/
 .buttonWrapper {
   display: flex;
-  justify-content: space-around;
-  margin: 10px 40px;
+  justify-content: space-evenly;
+  margin: 6% 10%;
   padding: 10px 40px;
   border-radius: 30px;
   background-color: #dddddd;
   box-shadow: 5px 5px 5px #1d1b1b;
-  height: 200px;
+  height: 26%;
+  align-items: center;
 }
 .handImage {
   object-fit: contain;
@@ -158,8 +165,8 @@
 .handButton {
   display: inline-block;
   border-radius: 9999px;
-  height: 12rem;
-  width: 12rem;
+  height: 7.5rem;
+  width: 7.5rem;
   background-color: white;
   box-shadow: 0px 5px 0px #4b4b4b;
   transition: all 0.1s;
@@ -178,80 +185,4 @@
   text-align: center;
   margin: 0 auto;
   font-size: 2rem;
-}
-
-@media screen and (max-width: 1084px) {
-  .pointWrapper h3 {
-    font-size: 17px;
-  }
-  .changeImageWrapper h2 {
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 900px) {
-  .pointWrapper h3 {
-    font-size: 15px;
-  }
-}
-@media screen and (max-width: 820px) {
-  .vsPageLeft {
-    width: 90%;
-    margin: 0 auto 20px;
-    height: 250px;
-  }
-  .vsPageRight {
-    width: 90%;
-    margin: 0 auto;
-    height: 250px;
-  }
-  .buttonWrapper {
-    margin: 30px 40px 10px;
-    height: 160px;
-  }
-  .handButton {
-    height: 9rem;
-    width: 9rem;
-  }
-}
-@media screen and (max-width: 600px) {
-  .buttonWrapper {
-    margin: 30px 40px 10px;
-    height: 110px;
-  }
-  .handButton {
-    height: 6rem;
-    width: 6rem;
-  }
-  .bottomMessage {
-    display: block;
-  }
-}
-@media screen and (max-width: 450px) {
-  .buttonWrapper {
-    margin: 30px 10px 10px;
-    height: 110px;
-  }
-  .handButton {
-    height: 6rem;
-    width: 6rem;
-  }
-  .bottomMessage {
-    display: block;
-  }
-  .pointWrapper h3 {
-    width: 100px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .winCounter {
-    font-size: 1.5rem;
-  }
-  .buttonWrapper {
-    margin: 30px 10px 10px;
-    height: 90px;
-  }
-  .handButton {
-    height: 5rem;
-    width: 5rem;
-  }
 }

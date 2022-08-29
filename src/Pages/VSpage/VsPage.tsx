@@ -104,13 +104,15 @@ export const VsPage: FC = () => {
           />
         </div>
         <div className="vsPageRight">
-          <Judge win={win} aiko={aiko} lose={lose} />
-          <BetButton
-            totalPoint={totalPoint}
-            setTotalPoint={setTotalPoint}
-            betPoint={betPoint}
-            setBetPoint={setBetPoint}
-          />
+          <div className="vsPageRightTop">
+            <Judge win={win} aiko={aiko} lose={lose} />
+            <BetButton
+              totalPoint={totalPoint}
+              setTotalPoint={setTotalPoint}
+              betPoint={betPoint}
+              setBetPoint={setBetPoint}
+            />
+          </div>
           <div className="buttonWrapper">
             <button onClick={() => onclickResult(1)} className="handButton">
               <img src="../../janken_gu.png" alt="グー" className="handImage" />
