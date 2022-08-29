@@ -80,7 +80,7 @@ export const ChangeResult: FC<Prop> = ({
               </button>
             </div>
           </div>
-          <div>
+          <div className="myChangeWrapper">
             <h2>プレイヤーの手</h2>
             <img src={myHandImage()} alt="自分の手" />
           </div>
