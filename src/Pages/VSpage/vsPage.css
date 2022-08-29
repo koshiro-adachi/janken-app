@@ -186,3 +186,130 @@
   margin: 0 auto;
   font-size: 2rem;
 }
+@media screen and (max-width: 1190px) {
+  .handButton {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  .changeImageWrapper h2 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .handButton {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .buttonWrapper {
+    margin: 6% 5%;
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+}
+@media screen and (max-width: 890px) {
+  .changeImageWrapper h2 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .vsDiv {
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+  .vsPageLeft {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .vsPageRight {
+    width: 80%;
+    margin: 30px auto;
+  }
+  .bottomMessage {
+    margin-bottom: 20px;
+  }
+  .buttonWrapper {
+    margin: 6% 10%;
+    padding: 10px 40px;
+    border-radius: 30px;
+    height: 26%;
+  }
+  .handButton {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+}
+@media screen and (max-width: 680px) {
+  .buttonWrapper {
+    margin: 6% 5%;
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+  .bottomMessage {
+    display: block;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 555px) {
+  .handButton {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .handButton {
+    height: 5rem;
+    width: 5rem;
+  }
+  .winCounter {
+    font-size: 1.5rem;
+  }
+  .changeImageWrapper h2 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .handButton {
+    height: 4rem;
+    width: 4rem;
+  }
+  .changeImageWrapper h2 {
+    font-size: 30px;
+  }
+  .changeImageWrapper img {
+    width: auto;
+    height: 150px;
+  }
+  .betButton {
+    width: 80px;
+  }
+  .betButton button {
+    font-size: 0.8rem;
+    width: 80px;
+    padding: 2px 5px;
+    margin: 3px;
+  }
+  .judgeWrapper {
+    height: 110px;
+  }
+  .judgeWrapper span {
+    font-size: 1rem;
+  }
+  .vsPageRight h3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .handButton {
+    height: 3rem;
+    width: 3rem;
+  }
+  .winCounter {
+    font-size: 1rem;
+  }
+  .changeImageWrapper h2 {
+    font-size: 20px;
+  }
+}
