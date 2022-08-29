@@ -82,15 +82,18 @@ export const VsPage: FC = () => {
   const onClickClose = () => setOpen(false);
   return (
     <>
-      {open ? (
-        <div>
-          <h3>betPointを設定してください</h3>
-          <button onClick={onClickClose}>閉じる</button>
-        </div>
-      ) : (
-        <></>
-      )}
       <div className="vsDiv">
+        {open ? (
+          <>
+            <div className="errorMessageWrap"></div>
+            <div className="errorMessage">
+              <h3>betPointを設定してください</h3>
+              <button onClick={onClickClose}>閉じる</button>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
         <div className="vsPageLeft">
           <ChangeResult
             win={win}

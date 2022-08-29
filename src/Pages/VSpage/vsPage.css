@@ -6,6 +6,36 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
+  position: relative;
+}
+.errorMessageWrap {
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  height: 95vh;
+  width: 100vw;
+}
+.errorMessage {
+  padding: 60px 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #cafff8;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 2;
+  text-align: end;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px;
+}
+.errorMessage button {
+  background-color: #ffffff;
+  color: #4d4d4d;
+  border-color: #4d4d4d;
+  width: 80px;
+  font-weight: 600;
 }
 .vsPageLeft {
   width: 45%;
@@ -212,6 +242,13 @@
   .changeImageWrapper h2 {
     font-size: 45px;
   }
+  .errorMessage {
+    padding: 30px 50px;
+  }
+  .errorMessage button {
+    width: 80px;
+    font-weight: 600;
+  }
 }
 @media screen and (max-width: 800px) {
   .vsDiv {
@@ -240,6 +277,9 @@
     height: 7.5rem;
     width: 7.5rem;
   }
+  .errorMessageWrap {
+    height: 175vh;
+  }
 }
 @media screen and (max-width: 680px) {
   .buttonWrapper {
@@ -249,6 +289,11 @@
   }
   .bottomMessage {
     display: block;
+    text-align: center;
+  }
+  .errorMessage {
+    padding: 10px 20px;
+    width: 80%;
     text-align: center;
   }
 }
