@@ -5,18 +5,20 @@ import "./finish.css";
 type CustomizedState = {
   maxWinCount: number;
   totalPoint: number;
+  betPoint: number;
 };
 
 export const Finish: FC = () => {
   const navi = useNavigate();
   const location = useLocation();
   const state = location.state as CustomizedState;
-  const { maxWinCount, totalPoint } = state;
+  const { maxWinCount, totalPoint, betPoint } = state;
 
   const onClickVS = () => {
     document.body.style.backgroundColor = "#ffffff";
+    const backPoint = totalPoint + betPoint;
     navi("/vspage", {
-      state: { backPoint: totalPoint, backMaxWinCount: maxWinCount },
+      state: { backPoint: backPoint, backMaxWinCount: maxWinCount },
     });
   };
   const onClickHome = () => {
@@ -31,7 +33,7 @@ export const Finish: FC = () => {
           <div className="resultMain">
             <h2 className="resultMessage">お疲れさまでした</h2>
             <div className="pointResult">
-              <h3>{`total Point: ${totalPoint}point`}</h3>
+              <h3>{`total Point: ${totalPoint + betPoint}point`}</h3>
               <h3>{`最大連続勝利回数: ${maxWinCount}回`}</h3>
             </div>
             <div className="resultButtonWrapper">

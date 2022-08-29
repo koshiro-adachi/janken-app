@@ -20,6 +20,8 @@ export const VsPage: FC = () => {
   const [opponentHand, setOpponentHand] = useState(1);
   const [totalPoint, setTotalPoint] = useState(100);
   const [betPoint, setBetPoint] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [myHand, setMyHand] = useState(0);
 
   const location = useLocation();
   useEffect(() => {
@@ -43,15 +45,13 @@ export const VsPage: FC = () => {
   //winCountに応じてmaxWinCountを更新
 
   const onclickResult = (num: number) => {
-    document
-      .getElementById("opponentHandImage")
-      ?.animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 500,
-        iterations: 1,
-      });
+    if (betPoint === 0) {
+      setOpen(true);
+      return;
+    }
     const answer = jankenRandom(num);
     //じゃんけんをして選んだ手に応じて結果と相手の手を返す
-
+    setMyHand(num);
     if (answer?.result === "win") {
       setWin(true);
       setAiko(false);
@@ -59,7 +59,6 @@ export const VsPage: FC = () => {
       setOpponentHand(answer.opponentHand);
       setWinCount(winCount + 1);
       setTotalPoint(totalPoint + betPoint * 2);
-      setBetPoint(0);
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -72,11 +71,25 @@ export const VsPage: FC = () => {
       setLose(true);
       setOpponentHand(answer.opponentHand);
       setWinCount(0);
-      setBetPoint(0);
     }
+    document
+      .getElementById("opponentHandImage")
+      ?.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 500,
+        iterations: 1,
+      });
   };
+  const onClickClose = () => setOpen(false);
   return (
     <>
+      {open ? (
+        <div>
+          <h3>betPointを設定してください</h3>
+          <button onClick={onClickClose}>閉じる</button>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="vsDiv">
         <div className="vsPageHalfTop">
           <div className="vsPageLeft">
@@ -87,6 +100,8 @@ export const VsPage: FC = () => {
               opponentHand={opponentHand}
               maxWinCount={maxWinCount}
               totalPoint={totalPoint}
+              myHand={myHand}
+              betPoint={betPoint}
             />
           </div>
           <div className="vsPageRight">
