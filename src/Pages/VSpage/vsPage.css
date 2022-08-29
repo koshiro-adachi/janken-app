@@ -1,25 +1,20 @@
 .vsDiv {
   color: #000000ad;
   width: auto;
-  height: 100vh;
+  height: 90vh;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-}
-.vsPageHalfTop {
-  display: flex;
   justify-content: space-around;
-  height: 250px;
-  padding-top: 20px;
 }
 .vsPageLeft {
   width: 45%;
-  border: solid;
-  border-radius: 10px;
   margin-left: 10px;
+  height: 100%;
 }
 .changeWrapper {
   width: 100%;
+  height: 42%;
+  border: solid;
 }
 .changeImageWrapper {
   text-align: center;
@@ -35,27 +30,14 @@
 }
 .changeImageWrapper img {
   width: auto;
-  height: 160px;
+  height: 180px;
 }
-.myChangeWrapper {
-  text-align: center;
-  position: relative;
-  padding: 10px;
-}
-.myChangeWrapper h2 {
-  font-size: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.myChangeWrapper img {
-  width: auto;
-  height: 160px;
-}
+
 .changeButtonWrappeer {
   display: flex;
   justify-content: space-around;
+  height: 16%;
+  align-items: center;
 }
 .changeButton {
   font-size: 1.5rem;
@@ -63,6 +45,7 @@
   border-radius: 10px;
   background-color: #dddddd;
   transition: all 0.1s;
+  height: 50px;
 }
 .changeButton:hover {
   border-color: #4b4b4b;
@@ -72,6 +55,8 @@
 
 .defaultChangeWrapper {
   text-align: center;
+  height: 42%;
+  border: solid;
 }
 .defaultChangeWrapper h2 {
   font-size: 3rem;

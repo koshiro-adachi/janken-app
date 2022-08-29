@@ -65,23 +65,24 @@ export const ChangeResult: FC<Prop> = ({
   if (win || lose) {
     return (
       <>
-        <div className="VSHandWrapper">
-          <div className="changeWrapper">
-            <div className="changeImageWrapper" id="opponentHandImage">
-              <h2>相手の手</h2>
-              <img src={opponentHandImage()} alt="相手の手" />
-            </div>
-            <div className="changeButtonWrappeer">
-              <button onClick={onClickHome} className="changeButton">
-                ホーム
-              </button>
-              <button onClick={onClickResult} className="changeButton">
-                終了する
-              </button>
-            </div>
+        <div className="changeWrapper">
+          <div className="changeImageWrapper" id="opponentHandImage">
+            <h2>相手の手</h2>
+            <img src={opponentHandImage()} alt="相手の手" />
           </div>
-          <div className="myChangeWrapper">
-            <h2>プレイヤーの手</h2>
+        </div>
+        <div className="changeButtonWrappeer">
+          <button onClick={onClickHome} className="changeButton">
+            ホーム
+          </button>
+          <h2>VS</h2>
+          <button onClick={onClickResult} className="changeButton">
+            終了する
+          </button>
+        </div>
+        <div className="changeWrapper">
+          <div className="changeImageWrapper">
+            <h2>自分の手</h2>
             <img src={myHandImage()} alt="自分の手" />
           </div>
         </div>
@@ -90,15 +91,18 @@ export const ChangeResult: FC<Prop> = ({
   } else if (aiko) {
     return (
       <>
-        <div className="VSHandWrapper">
-          <div className="changeWrapper">
-            <div className="changeImageWrapper">
-              <h2>相手の手</h2>
-              <img src={opponentHandImage()} alt="相手の手" />
-            </div>
+        <div className="changeWrapper">
+          <div className="changeImageWrapper">
+            <h2>相手の手</h2>
+            <img src={opponentHandImage()} alt="相手の手" />
           </div>
-          <div className="myChangeWrapper">
-            <h2>プレイヤーの手</h2>
+        </div>
+        <div className="changeButtonWrappeer">
+          <h2>VS</h2>
+        </div>
+        <div className="changeWrapper">
+          <div className="changeImageWrapper">
+            <h2>自分の手</h2>
             <img src={myHandImage()} alt="自分の手" />
           </div>
         </div>
@@ -107,13 +111,16 @@ export const ChangeResult: FC<Prop> = ({
   } else {
     return (
       <>
-        <div className="VSHandWrapper">
-          <div className="defaultChangeWrapper">
-            <h2>じゃんけん</h2>
-            <h3>手を選んでね</h3>
-          </div>
-          <div className="myChangeWrapper">
-            <h2>プレイヤーの手</h2>
+        <div className="defaultChangeWrapper">
+          <h2>じゃんけん</h2>
+          <h3>手を選んでね</h3>
+        </div>
+        <div className="changeButtonWrappeer">
+          <h2>VS</h2>
+        </div>
+        <div className="changeWrapper">
+          <div className="changeImageWrapper">
+            <h2>自分の手</h2>
             <img src={myHandImage()} alt="自分の手" />
           </div>
         </div>
