@@ -91,48 +91,46 @@ export const VsPage: FC = () => {
         <></>
       )}
       <div className="vsDiv">
-        <div className="vsPageHalfTop">
-          <div className="vsPageLeft">
-            <ChangeResult
-              win={win}
-              aiko={aiko}
-              lose={lose}
-              opponentHand={opponentHand}
-              maxWinCount={maxWinCount}
-              totalPoint={totalPoint}
-              myHand={myHand}
-              betPoint={betPoint}
-            />
+        <div className="vsPageLeft">
+          <ChangeResult
+            win={win}
+            aiko={aiko}
+            lose={lose}
+            opponentHand={opponentHand}
+            maxWinCount={maxWinCount}
+            totalPoint={totalPoint}
+            myHand={myHand}
+            betPoint={betPoint}
+          />
+        </div>
+        <div className="vsPageRight">
+          <Judge win={win} aiko={aiko} lose={lose} />
+          <BetButton
+            totalPoint={totalPoint}
+            setTotalPoint={setTotalPoint}
+            betPoint={betPoint}
+            setBetPoint={setBetPoint}
+          />
+          <div className="buttonWrapper">
+            <button onClick={() => onclickResult(1)} className="handButton">
+              <img src="../../janken_gu.png" alt="グー" className="handImage" />
+            </button>
+            <button onClick={() => onclickResult(2)} className="handButton">
+              <img
+                src="../../janken_choki.png"
+                alt="チョキ"
+                className="handImage"
+              />
+            </button>
+            <button onClick={() => onclickResult(3)} className="handButton">
+              <img src="../../janken_pa.png" alt="パー" className="handImage" />
+            </button>
           </div>
-          <div className="vsPageRight">
-            <Judge win={win} aiko={aiko} lose={lose} />
-            <BetButton
-              totalPoint={totalPoint}
-              setTotalPoint={setTotalPoint}
-              betPoint={betPoint}
-              setBetPoint={setBetPoint}
-            />
-          </div>
         </div>
-        <div className="buttonWrapper">
-          <button onClick={() => onclickResult(1)} className="handButton">
-            <img src="../../janken_gu.png" alt="グー" className="handImage" />
-          </button>
-          <button onClick={() => onclickResult(2)} className="handButton">
-            <img
-              src="../../janken_choki.png"
-              alt="チョキ"
-              className="handImage"
-            />
-          </button>
-          <button onClick={() => onclickResult(3)} className="handButton">
-            <img src="../../janken_pa.png" alt="パー" className="handImage" />
-          </button>
-        </div>
-        <div className="bottomMessage">
-          <h2 className="winCounter">現在{winCount}勝目です</h2>
-          <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
-        </div>
+      </div>
+      <div className="bottomMessage">
+        <h2 className="winCounter">現在{winCount}勝目です</h2>
+        <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
       </div>
     </>
   );
