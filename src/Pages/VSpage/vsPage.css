@@ -10,7 +10,7 @@
 }
 .errorMessageWrap {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   background-color: rgb(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -59,12 +59,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 .changeImageWrapper img {
   width: auto;
   height: 180px;
 }
-
+.oppoImage {
+  transform: scale(1, -1);
+}
 .changeButtonWrappeer {
   display: flex;
   justify-content: space-around;

@@ -68,7 +68,11 @@ export const ChangeResult: FC<Prop> = ({
         <div className="changeWrapper">
           <div className="changeImageWrapper" id="opponentHandImage">
             <h2>相手の手</h2>
-            <img src={opponentHandImage()} alt="相手の手" />
+            <img
+              src={opponentHandImage()}
+              alt="相手の手"
+              className="oppoImage"
+            />
           </div>
         </div>
         <div className="changeButtonWrappeer">
@@ -94,7 +98,11 @@ export const ChangeResult: FC<Prop> = ({
         <div className="changeWrapper">
           <div className="changeImageWrapper">
             <h2>相手の手</h2>
-            <img src={opponentHandImage()} alt="相手の手" />
+            <img
+              src={opponentHandImage()}
+              alt="相手の手"
+              className="oppoImage"
+            />
           </div>
         </div>
         <div className="changeButtonWrappeer">
