@@ -26,7 +26,7 @@ export const ChangeResult: FC<Prop> = ({
   //homeに戻る
 
   const onClickResult = () => {
-    document.body.style.backgroundColor="#dddddd";
+    document.body.style.backgroundColor = "#dddddd";
     navi("/finish", {
       state: {
         maxWinCount: maxWinCount,
@@ -50,7 +50,7 @@ export const ChangeResult: FC<Prop> = ({
   if (win || lose) {
     return (
       <div className="changeWrapper">
-        <div className="changeImageWrapper">
+        <div className="changeImageWrapper" id="opponentHandImage">
           <h2>相手の手</h2>
           <img src={opponentHandImage()} alt="相手の手" />
         </div>
