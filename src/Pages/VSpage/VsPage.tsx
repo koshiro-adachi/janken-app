@@ -43,6 +43,12 @@ export const VsPage: FC = () => {
   //winCountに応じてmaxWinCountを更新
 
   const onclickResult = (num: number) => {
+    document
+      .getElementById("opponentHandImage")
+      ?.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 500,
+        iterations: 1,
+      });
     const answer = jankenRandom(num);
     //じゃんけんをして選んだ手に応じて結果と相手の手を返す
 
