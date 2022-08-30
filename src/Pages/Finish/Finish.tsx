@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./finish.css";
 
@@ -13,13 +13,22 @@ export const Finish: FC = () => {
   const location = useLocation();
   const state = location.state as CustomizedState;
   const { maxWinCount, totalPoint, betPoint } = state;
-
+  const backPoint = totalPoint + betPoint;
+  const [zeroBoolean, setZeroBoolean] = useState(false);
+  useEffect(() => {
+    if (backPoint === 0) {
+      setZeroBoolean(true);
+    }
+  }, []);
   const onClickVS = () => {
-    document.body.style.backgroundColor = "#ffffff";
-    const backPoint = totalPoint + betPoint;
-    navi("/vspage", {
-      state: { backPoint: backPoint, backMaxWinCount: maxWinCount },
-    });
+    if (backPoint === 0) {
+      return;
+    } else {
+      document.body.style.backgroundColor = "#ffffff";
+      navi("/vspage", {
+        state: { backPoint: backPoint, backMaxWinCount: maxWinCount },
+      });
+    }
   };
   const onClickHome = () => {
     document.body.style.backgroundColor = "#ffffff";
@@ -37,7 +46,10 @@ export const Finish: FC = () => {
               <h3>{`最大連続勝利回数: ${maxWinCount}回`}</h3>
             </div>
             <div className="resultButtonWrapper">
-              <button onClick={onClickVS} className="changeResultButton">
+              <button
+                onClick={onClickVS}
+                className={zeroBoolean ? "noneButton" : "changeResultButton"}
+              >
                 試合に戻る
               </button>
               <button onClick={onClickHome} className="resultToHome">

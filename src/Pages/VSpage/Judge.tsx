@@ -12,7 +12,7 @@ export const Judge: FC<CustomizedState> = ({ win, aiko, lose }) => {
       <div className="judgeWrapper">
         <h2 className="judge">判定</h2>
         <h3>
-          プレイヤーの<span className="red">勝利</span>です
+          自分の<span className="red">勝利</span>です
         </h3>
       </div>
     );
@@ -31,7 +31,7 @@ export const Judge: FC<CustomizedState> = ({ win, aiko, lose }) => {
       <div className="judgeWrapper">
         <h2 className="judge">判定</h2>
         <h3>
-          プレイヤーの<span className="blue">負け</span>です
+          自分の<span className="blue">負け</span>です
         </h3>
       </div>
     );
@@ -39,7 +39,7 @@ export const Judge: FC<CustomizedState> = ({ win, aiko, lose }) => {
     return (
       <div className="judgeWrapper">
         <h2 className="judge">判定</h2>
-        <h3>???</h3>
+        <h3>？？？</h3>
       </div>
     );
   }
