@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, RefObject } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Prop = {
@@ -10,6 +10,7 @@ type Prop = {
   totalPoint: number;
   myHand: number;
   betPoint: number;
+  imageElement: RefObject<HTMLDivElement>;
 };
 
 export const ChangeResult: FC<Prop> = ({
@@ -21,6 +22,7 @@ export const ChangeResult: FC<Prop> = ({
   totalPoint,
   myHand,
   betPoint,
+  imageElement,
 }) => {
   const navi = useNavigate();
 
@@ -66,7 +68,11 @@ export const ChangeResult: FC<Prop> = ({
     return (
       <>
         <div className="changeWrapper">
-          <div className="changeImageWrapper" id="opponentHandImage">
+          <div
+            className="changeImageWrapper"
+            id="opponentHandImage"
+            ref={imageElement}
+          >
             <h2>相手の手</h2>
             <img
               src={opponentHandImage()}
@@ -96,7 +102,7 @@ export const ChangeResult: FC<Prop> = ({
     return (
       <>
         <div className="changeWrapper">
-          <div className="changeImageWrapper">
+          <div className="changeImageWrapper" ref={imageElement}>
             <h2>相手の手</h2>
             <img
               src={opponentHandImage()}

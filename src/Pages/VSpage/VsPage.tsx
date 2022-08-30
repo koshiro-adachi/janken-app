@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { jankenRandom } from "../../hooks/jankenRandom";
 import { BetButton } from "./BetButton";
@@ -22,6 +22,8 @@ export const VsPage: FC = () => {
   const [betPoint, setBetPoint] = useState(0);
   const [open, setOpen] = useState(false);
   const [myHand, setMyHand] = useState(0);
+
+  const imageElement = useRef<HTMLDivElement>(null);
 
   const location = useLocation();
   useEffect(() => {
@@ -79,12 +81,10 @@ export const VsPage: FC = () => {
         setTotalPoint(totalPoint - betPoint);
       }
     }
-    document
-      .getElementById("opponentHandImage")
-      ?.animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 500,
-        iterations: 1,
-      });
+    imageElement.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 800,
+      iterations: 1,
+    });
   };
   const onClickClose = () => setOpen(false);
   return (
@@ -111,6 +111,7 @@ export const VsPage: FC = () => {
             totalPoint={totalPoint}
             myHand={myHand}
             betPoint={betPoint}
+            imageElement={imageElement}
           />
         </div>
         <div className="vsPageRight">
