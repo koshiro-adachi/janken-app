@@ -58,7 +58,7 @@ export const VsPage: FC = () => {
       setLose(false);
       setOpponentHand(answer.opponentHand);
       setWinCount(winCount + 1);
-      setTotalPoint(totalPoint + betPoint * 2);
+      setTotalPoint(totalPoint + betPoint);
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -71,6 +71,13 @@ export const VsPage: FC = () => {
       setLose(true);
       setOpponentHand(answer.opponentHand);
       setWinCount(0);
+      if (totalPoint < betPoint) {
+        setBetPoint(0);
+      } else if (totalPoint === betPoint) {
+        setTotalPoint(0);
+      } else {
+        setTotalPoint(totalPoint - betPoint);
+      }
     }
     document
       .getElementById("opponentHandImage")
