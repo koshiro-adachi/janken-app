@@ -15,11 +15,18 @@ export const Finish: FC = () => {
   const { maxWinCount, totalPoint, betPoint } = state;
 
   const onClickVS = () => {
-    document.body.style.backgroundColor = "#ffffff";
     const backPoint = totalPoint + betPoint;
-    navi("/vspage", {
-      state: { backPoint: backPoint, backMaxWinCount: maxWinCount },
-    });
+    if (backPoint === 0) {
+      alert(
+        "totalPointが0のため試合に戻れません。ホームに戻るボタンを押してください"
+      );
+      return;
+    } else {
+      document.body.style.backgroundColor = "#ffffff";
+      navi("/vspage", {
+        state: { backPoint: backPoint, backMaxWinCount: maxWinCount },
+      });
+    }
   };
   const onClickHome = () => {
     document.body.style.backgroundColor = "#ffffff";
