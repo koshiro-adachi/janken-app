@@ -11,6 +11,7 @@ type Prop = {
   myHand: number;
   betPoint: number;
   imageElement: RefObject<HTMLDivElement>;
+  frequency: number;
 };
 
 export const ChangeResult: FC<Prop> = ({
@@ -23,6 +24,7 @@ export const ChangeResult: FC<Prop> = ({
   myHand,
   betPoint,
   imageElement,
+  frequency,
 }) => {
   const navi = useNavigate();
 
@@ -38,6 +40,7 @@ export const ChangeResult: FC<Prop> = ({
         maxWinCount: maxWinCount,
         totalPoint: totalPoint,
         betPoint: betPoint,
+        frequency: frequency,
       },
     });
   };

@@ -9,6 +9,7 @@ import "./vsPage.css";
 type CustomizedState = {
   backMaxWinCount: number;
   backPoint: number;
+  frequency: number;
 };
 
 export const VsPage: FC = () => {
@@ -34,11 +35,13 @@ export const VsPage: FC = () => {
     if (!location.state) {
       setMaxWinCount(0);
       setTotalPoint(100);
+      setFrequency(0);
     } else {
       const state = location.state as CustomizedState;
-      const { backPoint, backMaxWinCount } = state;
+      const { backPoint, backMaxWinCount, frequency } = state;
       setMaxWinCount(backMaxWinCount);
       setTotalPoint(backPoint);
+      setFrequency(frequency);
     }
   }, []);
   //初回レンダリング時にResult.tsxからの状態を引き継ぐ設定
@@ -52,10 +55,15 @@ export const VsPage: FC = () => {
   if (frequency === 5) {
     gubuttonElement.current!.style.boxShadow = "0px 0px 0px";
     gubuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+    gubuttonElement.current!.style.transform = "none";
+
     chokibuttonElement.current!.style.boxShadow = "0px 0px 0px";
     chokibuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+    chokibuttonElement.current!.style.transform = "none";
+
     pabuttonElement.current!.style.boxShadow = "0px 0px 0px";
     pabuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+    pabuttonElement.current!.style.transform = "none";
   }
 
   const onclickResult = (num: number) => {
@@ -137,6 +145,7 @@ export const VsPage: FC = () => {
             myHand={myHand}
             betPoint={betPoint}
             imageElement={imageElement}
+            frequency={frequency}
           />
         </div>
         <div className="vsPageRight">
