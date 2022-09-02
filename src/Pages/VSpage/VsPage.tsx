@@ -22,6 +22,7 @@ export const VsPage: FC = () => {
   const [betPoint, setBetPoint] = useState(0);
   const [open, setOpen] = useState(false);
   const [myHand, setMyHand] = useState(0);
+  const [frequency, setFrequency] = useState(0);
 
   const imageElement = useRef<HTMLDivElement>(null);
 
@@ -51,6 +52,10 @@ export const VsPage: FC = () => {
       setOpen(true);
       return;
     }
+    if (frequency === 5) {
+      setOpen(true);
+      return;
+    }
     const answer = jankenRandom(num);
     //じゃんけんをして選んだ手に応じて結果と相手の手を返す
     setMyHand(num);
@@ -61,6 +66,7 @@ export const VsPage: FC = () => {
       setOpponentHand(answer.opponentHand);
       setWinCount(winCount + 1);
       setTotalPoint(totalPoint + betPoint);
+      setFrequency(frequency + 1);
     } else if (answer?.result === "aiko") {
       setAiko(true);
       setLose(false);
@@ -73,6 +79,7 @@ export const VsPage: FC = () => {
       setLose(true);
       setOpponentHand(answer.opponentHand);
       setWinCount(0);
+      setFrequency(frequency + 1);
       if (totalPoint < betPoint) {
         setBetPoint(0);
       } else if (totalPoint === betPoint) {
@@ -87,6 +94,13 @@ export const VsPage: FC = () => {
     });
   };
   const onClickClose = () => setOpen(false);
+  const changeModalMessage = () => {
+    if (frequency === 5) {
+      return "終了です。終了ボタンを押してください";
+    } else {
+      return "betPointを設定してください";
+    }
+  };
   return (
     <>
       <div className="vsDiv">
@@ -94,7 +108,7 @@ export const VsPage: FC = () => {
           <>
             <div className="errorMessageWrap"></div>
             <div className="errorMessage">
-              <h3>betPointを設定してください</h3>
+              <h3>{changeModalMessage()}</h3>
               <button onClick={onClickClose}>閉じる</button>
             </div>
           </>
@@ -142,7 +156,7 @@ export const VsPage: FC = () => {
         </div>
       </div>
       <div className="bottomMessage">
-        <h2 className="winCounter">現在{winCount}勝目です</h2>
+        <h2 className="winCounter">{`現在${frequency}試合${winCount}勝目です`}</h2>
         <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
       </div>
     </>
