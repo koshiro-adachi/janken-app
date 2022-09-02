@@ -25,6 +25,9 @@ export const VsPage: FC = () => {
   const [frequency, setFrequency] = useState(0);
 
   const imageElement = useRef<HTMLDivElement>(null);
+  const gubuttonElement = useRef<HTMLButtonElement>(null);
+  const chokibuttonElement = useRef<HTMLButtonElement>(null);
+  const pabuttonElement = useRef<HTMLButtonElement>(null);
 
   const location = useLocation();
   useEffect(() => {
@@ -46,6 +49,14 @@ export const VsPage: FC = () => {
     }
   }, [winCount]);
   //winCountに応じてmaxWinCountを更新
+  if (frequency === 5) {
+    gubuttonElement.current!.style.boxShadow = "0px 0px 0px";
+    gubuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+    chokibuttonElement.current!.style.boxShadow = "0px 0px 0px";
+    chokibuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+    pabuttonElement.current!.style.boxShadow = "0px 0px 0px";
+    pabuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
+  }
 
   const onclickResult = (num: number) => {
     if (betPoint === 0) {
@@ -139,17 +150,29 @@ export const VsPage: FC = () => {
             />
           </div>
           <div className="buttonWrapper">
-            <button onClick={() => onclickResult(1)} className="handButton">
+            <button
+              onClick={() => onclickResult(1)}
+              className="handButton"
+              ref={gubuttonElement}
+            >
               <img src="../../janken_gu.png" alt="グー" className="handImage" />
             </button>
-            <button onClick={() => onclickResult(2)} className="handButton">
+            <button
+              onClick={() => onclickResult(2)}
+              className="handButton"
+              ref={chokibuttonElement}
+            >
               <img
                 src="../../janken_choki.png"
                 alt="チョキ"
                 className="handImage"
               />
             </button>
-            <button onClick={() => onclickResult(3)} className="handButton">
+            <button
+              onClick={() => onclickResult(3)}
+              className="handButton"
+              ref={pabuttonElement}
+            >
               <img src="../../janken_pa.png" alt="パー" className="handImage" />
             </button>
           </div>
