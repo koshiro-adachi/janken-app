@@ -65,6 +65,7 @@ export const VsPage: FC = () => {
     pabuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
     pabuttonElement.current!.style.transform = "none";
   }
+  //5回じゃんけんしたらボタンの表示を変える
 
   const onclickResult = (num: number) => {
     if (betPoint === 0) {
@@ -84,7 +85,8 @@ export const VsPage: FC = () => {
       setLose(false);
       setOpponentHand(answer.opponentHand);
       setWinCount(winCount + 1);
-      setTotalPoint(totalPoint + betPoint);
+      setTotalPoint(totalPoint + betPoint * 2);
+      setBetPoint(0);
       setFrequency(frequency + 1);
     } else if (answer?.result === "aiko") {
       setAiko(true);
@@ -99,13 +101,7 @@ export const VsPage: FC = () => {
       setOpponentHand(answer.opponentHand);
       setWinCount(0);
       setFrequency(frequency + 1);
-      if (totalPoint < betPoint) {
-        setBetPoint(0);
-      } else if (totalPoint === betPoint) {
-        setTotalPoint(0);
-      } else {
-        setTotalPoint(totalPoint - betPoint);
-      }
+      setBetPoint(0);
     }
     imageElement.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
       duration: 800,

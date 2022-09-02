@@ -34,7 +34,6 @@ export const ChangeResult: FC<Prop> = ({
   //homeに戻る
 
   const onClickResult = () => {
-    document.body.style.backgroundColor = "#dddddd";
     navi("/finish", {
       state: {
         maxWinCount: maxWinCount,
