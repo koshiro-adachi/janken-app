@@ -13,10 +13,12 @@ export const HowToPlayFooter: FC<Props> = ({ children }) => {
   return (
     <>
       <div>
-        <h1>遊び方</h1>
-        <button onClick={onClickStart}>始める</button>
+        <div>
+          <h1>遊び方</h1>
+          <button onClick={onClickStart}>始める</button>
+        </div>
+        {children}
       </div>
-      <div>{children}</div>
     </>
   );
 };
