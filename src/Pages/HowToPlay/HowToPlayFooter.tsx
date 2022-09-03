@@ -12,8 +12,8 @@ export const HowToPlayFooter: FC<Props> = ({ children }) => {
   };
   return (
     <>
-      <div>
-        <div>
+      <div className="howToPlayWrapper">
+        <div className="howToPlayFooter">
           <h1>遊び方</h1>
           <button onClick={onClickStart}>始める</button>
         </div>
