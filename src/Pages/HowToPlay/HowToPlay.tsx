@@ -24,7 +24,16 @@ export const HowToPlay = () => {
           </div>
           <div>
             <h2>運勢種類</h2>
-            {/* スライドで運勢確認 */}
+            <p>totalPoint×maxWinCount=Point</p>
+            <p>※maxWinCountが0の時はtotalPointの等倍がPointとなる。</p>
+            <div>
+              <button>＜</button>
+              <div>
+                <p>大吉</p>
+                <p>Point ＞ 200</p>
+                <button>＞</button>
+              </div>
+            </div>
           </div>
         </div>
       </HowToPlayFooter>
