@@ -1,11 +1,63 @@
 .howToPlayWrapper {
+  box-sizing: border-box;
 }
 .howToPlayFooter {
+  display: flex;
+  justify-content: space-around;
+  background-color: #dddddd;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  border-bottom: solid;
+  border-color: #4d4d4d;
+  border-width: 5px;
+}
+.howToPlayFooter h1 {
+  font-weight: 600;
+  font-size: 19px;
+  height: 35px;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  line-height: 35px;
+}
+.howToPlayFooter button {
+  height: 35px;
+  width: 150px;
+  margin: auto 0;
+  font-weight: 600;
+  font-size: 19px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 0px;
+  transition: all 0.1s;
+}
+.howToPlayFooter button:hover {
+  background-color: #cafff8;
+  transform: translateY(3px);
+  box-shadow: none;
 }
 /* ---footer--- */
 .howToPlayMainWrapper {
+  margin: 50px 20%;
 }
 .howToPlayMain {
+  margin: 20px 0 30px 0;
+}
+.howToPlayMain h2 {
+  background-color: #dddddd;
+  margin: 0;
+  border-radius: 300px;
+  padding: 3px 50px;
+  text-align: center;
+}
+.howToPlayMain p {
+  margin: 5px 0 0 5%;
+  font-weight: 700;
+  font-size: 17px;
 }
 /* ---hoe to play--- */
 .slideWrapper {
