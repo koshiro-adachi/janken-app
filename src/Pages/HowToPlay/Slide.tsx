@@ -88,13 +88,13 @@ export const Slide: FC = () => {
 
   return (
     <>
-      <div>
+      <div className="slideWrapper">
         <h2>運勢種類</h2>
         <p>totalPoint × maxWinCount=Point</p>
         <p>※maxWinCountが0の時はtotalPointの等倍がPointとなる。</p>
-        <div>
+        <div className="slideMain">
           <button onClick={onClickBack}>＜</button>
-          <div ref={ref}>
+          <div ref={ref} className="slideBody">
             <p>{fortuneArray[num].name}</p>
             <p>{fortuneArray[num].point}</p>
             <p>{fortuneArray[num].number}</p>
