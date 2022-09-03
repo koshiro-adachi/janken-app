@@ -26,7 +26,6 @@ export const Finish: FC = () => {
     if (backPoint === 0 || frequency === 5) {
       return;
     } else {
-      document.body.style.backgroundColor = "#ffffff";
       navi("/vspage", {
         state: {
           backPoint: backPoint,

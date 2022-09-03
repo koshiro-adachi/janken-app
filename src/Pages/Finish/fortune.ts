@@ -1,4 +1,7 @@
 export const fortune = (totalPoint: number, maxWinCount: number): string => {
+  if (maxWinCount === 0) {
+    maxWinCount++;
+  }
   const fortunePoint = totalPoint * maxWinCount;
   if (fortunePoint === 10000) {
     document.body.style.backgroundColor = "rgb(255 234 164)";
@@ -16,16 +19,16 @@ export const fortune = (totalPoint: number, maxWinCount: number): string => {
     document.body.style.backgroundColor = "rgb(164 242 255)";
     return "中吉";
   } else if (fortunePoint >= 100) {
-    document.body.style.backgroundColor = "rgb(164 195 255)";
+    document.body.style.backgroundColor = "#ffffff";
     return "小吉";
   } else if (fortunePoint >= 50) {
-    document.body.style.backgroundColor = "rgb(186 164 255)";
+    document.body.style.backgroundColor = "rgb(164 195 255)";
     return "末吉";
   } else if (fortunePoint >= 10) {
-    document.body.style.backgroundColor = "rgb(179 179 179)";
+    document.body.style.backgroundColor = "rgb(186 164 255)";
     return "凶";
   } else {
-    document.body.style.backgroundColor = "rgb(105 105 105)";
+    document.body.style.backgroundColor = "rgb(179 179 179)";
     return "大凶";
   }
 };

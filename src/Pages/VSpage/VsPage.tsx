@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { jankenRandom } from "../../hooks/jankenRandom";
+import { fortune } from "../Finish/fortune";
 import { BetButton } from "./BetButton";
 import { ChangeResult } from "./ChangeResult";
 import { Judge } from "./Judge";
@@ -94,6 +95,7 @@ export const VsPage: FC = () => {
       setWin(false);
       setWinCount(winCount);
       setOpponentHand(answer.opponentHand);
+      setBetPoint(betPoint);
     } else if (answer?.result === "lose") {
       setWin(false);
       setAiko(false);
@@ -102,12 +104,18 @@ export const VsPage: FC = () => {
       setWinCount(0);
       setFrequency(frequency + 1);
       setBetPoint(0);
+      setTotalPoint(totalPoint);
     }
     imageElement.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
       duration: 800,
       iterations: 1,
     });
   };
+  useEffect(() => {
+    fortune(totalPoint + betPoint, maxWinCount);
+  }, [totalPoint + betPoint, maxWinCount]);
+  //じゃんけんの結果でページ色を変える
+
   const onClickClose = () => setOpen(false);
   const changeModalMessage = () => {
     if (frequency === 5) {

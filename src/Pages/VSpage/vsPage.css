@@ -46,6 +46,7 @@
   width: 100%;
   height: 42%;
   border: solid;
+  background-color: white;
 }
 .changeImageWrapper {
   height: 100%;
@@ -78,7 +79,7 @@
   font-size: 1.5rem;
   border: solid;
   border-radius: 10px;
-  background-color: #dddddd;
+  background-color: white;
   transition: all 0.1s;
   height: 50px;
 }
@@ -92,6 +93,7 @@
   text-align: center;
   height: 42%;
   border: solid;
+  background-color: white;
 }
 .defaultChangeWrapper h2 {
   font-size: 3rem;
@@ -106,6 +108,7 @@
   border-radius: 10px;
   margin-right: 10px;
   height: 100%;
+  background-color: white;
 }
 .vsPageRightTop {
   height: 50%;
