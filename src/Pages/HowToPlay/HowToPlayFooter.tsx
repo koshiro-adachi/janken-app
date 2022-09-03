@@ -1,7 +1,22 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
-const HowToPlayFooter = () => {
-  return <div></div>;
+type Props = {
+  children: ReactNode;
 };
 
-export default HowToPlayFooter;
+export const HowToPlayFooter: FC<Props> = ({ children }) => {
+  const navi = useNavigate();
+  const onClickStart = () => {
+    navi("/vspage");
+  };
+  return (
+    <>
+      <div>
+        <h1>遊び方</h1>
+        <button onClick={onClickStart}>始める</button>
+      </div>
+      <div>{children}</div>
+    </>
+  );
+};

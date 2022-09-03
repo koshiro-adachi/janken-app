@@ -5,7 +5,7 @@ import "./home.css";
 export const Home: FC = () => {
   const navi = useNavigate();
   const onClickStart = () => {
-    navi("/vspage");
+    navi("/howtoplay");
   };
   return (
     <>
