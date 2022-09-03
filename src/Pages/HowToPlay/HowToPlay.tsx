@@ -1,5 +1,6 @@
 import React from "react";
 import { HowToPlayFooter } from "./HowToPlayFooter";
+import { Slide } from "./Slide";
 
 export const HowToPlay = () => {
   return (
@@ -22,19 +23,7 @@ export const HowToPlay = () => {
             <p>結果によって運勢が決まります。</p>
             <p>betPointを調整してより良い運勢を目指しましょう!</p>
           </div>
-          <div>
-            <h2>運勢種類</h2>
-            <p>totalPoint×maxWinCount=Point</p>
-            <p>※maxWinCountが0の時はtotalPointの等倍がPointとなる。</p>
-            <div>
-              <button>＜</button>
-              <div>
-                <p>大吉</p>
-                <p>Point ＞ 200</p>
-                <button>＞</button>
-              </div>
-            </div>
-          </div>
+          <Slide />
         </div>
       </HowToPlayFooter>
     </>

@@ -3,10 +3,10 @@ export const fortune = (totalPoint: number, maxWinCount: number): string => {
     maxWinCount++;
   }
   const fortunePoint = totalPoint * maxWinCount;
-  if (fortunePoint === 10000) {
+  if (fortunePoint >= 5000) {
     document.body.style.backgroundColor = "rgb(255 234 164)";
     return "ウルトラ大吉";
-  } else if (fortunePoint >= 5000) {
+  } else if (fortunePoint >= 1000) {
     document.body.style.backgroundColor = "rgb(237 255 164)";
     return "スーパー大吉";
   } else if (fortunePoint >= 250) {
