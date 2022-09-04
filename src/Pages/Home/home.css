@@ -1,4 +1,4 @@
-body{
+body {
   background-color: white;
 }
 .wrapper {
@@ -41,5 +41,24 @@ body{
     font-size: 3rem;
     min-width: none;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 490px) {
+  .hometitle {
+    font-size: 2rem;
+  }
+  .startButton {
+    margin: 40px auto;
+    font-size: 30px;
+    padding: 5px 20px;
+    border-radius: 8px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .hometitle {
+    font-size: 1.5rem;
+  }
+  .startButton {
+    font-size: 20px;
   }
 }

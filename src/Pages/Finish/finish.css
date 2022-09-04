@@ -61,7 +61,7 @@
   transform: translateY(3px);
   box-shadow: none;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1060px) {
   .changeResultButton {
     width: 210px;
     font-size: 1.5rem;
@@ -75,13 +75,13 @@
     font-size: 1.5rem;
   }
   .resultMessage {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .pointResult {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   .changeResultButton {
     margin: 10px;
   }
@@ -93,7 +93,8 @@
   }
   .resultMessage {
     font-size: 1.5rem;
-    margin: 0 60px;
+    margin: 0 auto;
+    width: 80vw;
   }
   .pointResult {
     font-size: 1.3rem;
@@ -106,9 +107,14 @@
 @media screen and (max-width: 375px) {
   .resultMessage {
     font-size: 1.3rem;
-    margin: 0 30px;
   }
   .pointResult {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 312px) {
+  .resultMessage {
+    font-size: 1rem;
+    padding: 10px;
   }
 }

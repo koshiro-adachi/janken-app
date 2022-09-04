@@ -1,0 +1,169 @@
+.howToPlayWrapper {
+  box-sizing: border-box;
+}
+.howToPlayFooter {
+  display: flex;
+  justify-content: space-around;
+  background-color: #dddddd;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  border-bottom: solid;
+  border-color: #4d4d4d;
+  border-width: 5px;
+}
+.howToPlayFooter h1 {
+  font-weight: 600;
+  font-size: 19px;
+  height: 35px;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  line-height: 35px;
+}
+.howToPlayFooter button {
+  height: 35px;
+  width: 150px;
+  margin: auto 0;
+  font-weight: 600;
+  font-size: 19px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 0px;
+  transition: all 0.1s;
+}
+.howToPlayFooter button:hover {
+  background-color: #cafff8;
+  transform: translateY(3px);
+  box-shadow: none;
+}
+/* ---footer--- */
+.howToPlayMainWrapper {
+  margin: 50px 20%;
+}
+.howToPlayMain {
+  margin: 20px 0 30px 0;
+}
+.howToPlayMain h2 {
+  background-color: #dddddd;
+  margin: 0;
+  border-radius: 300px;
+  padding: 3px 50px;
+  text-align: center;
+}
+.howToPlayMain p {
+  margin: 5px 0 0 5%;
+  font-weight: 700;
+  font-size: 17px;
+}
+/* ---hoe to play--- */
+.slideWrapper {
+  text-align: center;
+}
+.slideWrapper h2 {
+  margin: 50px 0 10px 0;
+}
+.slideWrapper p {
+  margin: 5px 0 5px 0;
+  font-weight: 700;
+}
+.slideMain {
+  margin: 40px 0 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideMain button {
+  background-color: white;
+  font-weight: 800;
+  border-radius: 9999px;
+  height: 150px;
+  box-shadow: 0 3px 3px;
+  transition: all 0.1s;
+}
+.slideMain button:hover {
+  background-color: #cafff8;
+  box-shadow: none;
+}
+.slideBody {
+  width: 500px;
+  height: 200px;
+  margin: 0 10px;
+  border: solid;
+  position: relative;
+}
+.slideContent {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slidePageNum {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ---slide--- */
+
+@media screen and (max-width: 630px) {
+  .howToPlayMain h2 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .howToPlayMainWrapper {
+    margin: 50px 10%;
+  }
+}
+@media screen and (max-width: 401px) {
+  .howToPlayMainWrapper {
+    margin: 50px 5%;
+  }
+  .howToPlayMain p {
+    font-size: 14px;
+  }
+  .howToPlayMain h2 {
+    font-size: 1rem;
+  }
+  .slideBody {
+    height: 140px;
+  }
+  .slideMain button {
+    height: 120px;
+  }
+}
+@media screen and (max-width: 333px) {
+  .slideWrapper p {
+    font-size: 13px;
+  }
+  .slideWrapper h2 {
+    font-size: 20px;
+  }
+  .howToPlayMain h2 {
+    padding: 3px 20px;
+  }
+  .howToPlayFooter button {
+    height: 30px;
+    width: 118px;
+    font-size: 15px;
+  }
+  .howToPlayFooter h1 {
+    font-size: 15px;
+    height: 30px;
+    width: 118px;
+    line-height: 31px;
+    margin: auto 0;
+  }
+}
+@media screen and (max-width: 290px) {
+  .slideWrapper p {
+    font-size: 11px;
+  }
+  .slideWrapper h2 {
+    font-size: 17px;
+  }
+}
