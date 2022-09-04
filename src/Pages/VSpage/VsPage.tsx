@@ -127,8 +127,8 @@ export const VsPage: FC = () => {
   };
   return (
     <>
+      <HamburgerMenu />
       <div className="vsDiv">
-        <HamburgerMenu />
         {open ? (
           <>
             <div className="errorMessageWrap"></div>
