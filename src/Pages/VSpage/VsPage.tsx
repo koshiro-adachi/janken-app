@@ -4,6 +4,7 @@ import { jankenRandom } from "../../hooks/jankenRandom";
 import { fortune } from "../Finish/fortune";
 import { BetButton } from "./BetButton";
 import { ChangeResult } from "./ChangeResult";
+import { HamburgerMenu } from "./HamburgerMenu";
 import { Judge } from "./Judge";
 import "./vsPage.css";
 
@@ -127,6 +128,7 @@ export const VsPage: FC = () => {
   return (
     <>
       <div className="vsDiv">
+        <HamburgerMenu />
         {open ? (
           <>
             <div className="errorMessageWrap"></div>
