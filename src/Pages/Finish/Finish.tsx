@@ -51,7 +51,6 @@ export const Finish: FC = () => {
             </div>
             <h2 className="resultMessage">{`あなたの運勢は${fortune(
               totalPoint,
-              maxWinCount,
               betPoint
             )}です。`}</h2>
             <div className="resultButtonWrapper">

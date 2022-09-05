@@ -117,7 +117,7 @@ export const VsPage: FC = () => {
     });
   };
   useEffect(() => {
-    fortune(totalPoint, maxWinCount, betPoint);
+    fortune(totalPoint, betPoint);
   }, [totalPoint + betPoint]);
   //じゃんけんの結果でページ色を変える
 

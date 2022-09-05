@@ -42,7 +42,9 @@ export const HamburgerMenu: FC<hambergerProps> = ({
             </div>
             <div>
               <h3>
-                betPointを<span></span>にすると次勝てばに<span></span>なります
+                betPointを<span></span>にして次勝てばに
+                <span>{array[1]}</span>
+                なります
               </h3>
             </div>
             <div>
