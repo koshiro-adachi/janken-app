@@ -1,34 +1,37 @@
 export const fortune = (
   totalPoint: number,
-  maxWinCount: number,
+  winCount: number,
   betPoint: number
 ): string => {
-  if (maxWinCount === 0) {
-    maxWinCount++;
-  }
-  const fortunePoint = totalPoint + betPoint * maxWinCount;
-  if (fortunePoint >= 6000) {
+  const fortunePoint = (): number => {
+    if (winCount <= 1) {
+      return totalPoint + betPoint * 2;
+    } else {
+      return totalPoint + betPoint * 4;
+    }
+  };
+  if (fortunePoint() >= 6000) {
     document.body.style.backgroundColor = "rgb(255 234 164)";
     return "ウルトラ大吉";
-  } else if (fortunePoint >= 1400) {
+  } else if (fortunePoint() >= 1400) {
     document.body.style.backgroundColor = "rgb(237 255 164)";
     return "スーパー大吉";
-  } else if (fortunePoint >= 500) {
+  } else if (fortunePoint() >= 500) {
     document.body.style.backgroundColor = "rgb(189 255 164)";
     return "大吉";
-  } else if (fortunePoint >= 200) {
+  } else if (fortunePoint() >= 200) {
     document.body.style.backgroundColor = "rgb(164 255 217)";
     return "吉";
-  } else if (fortunePoint >= 150) {
+  } else if (fortunePoint() >= 150) {
     document.body.style.backgroundColor = "rgb(164 242 255)";
     return "中吉";
-  } else if (fortunePoint >= 100) {
+  } else if (fortunePoint() >= 100) {
     document.body.style.backgroundColor = "#ffffff";
     return "小吉";
-  } else if (fortunePoint >= 50) {
+  } else if (fortunePoint() >= 50) {
     document.body.style.backgroundColor = "rgb(164 195 255)";
     return "末吉";
-  } else if (fortunePoint >= 10) {
+  } else if (fortunePoint() >= 10) {
     document.body.style.backgroundColor = "rgb(186 164 255)";
     return "凶";
   } else {
