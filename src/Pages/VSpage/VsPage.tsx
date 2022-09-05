@@ -131,7 +131,11 @@ export const VsPage: FC = () => {
   };
   return (
     <>
-      <HamburgerMenu />
+      <HamburgerMenu
+        totalPoint={totalPoint}
+        betPoint={betPoint}
+        winCount={winCount}
+      />
       <div className="vsDiv">
         {open ? (
           <>
