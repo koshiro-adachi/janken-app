@@ -14,30 +14,18 @@ export const HamburgerMenu: FC<hambergerProps> = ({
   winCount,
 }) => {
   const fortuneData: Array<fortuneProps> = fortuneArray;
+  const fortunePoint = totalPoint + betPoint;
 
-  const fortuneName = () => {
-    const fortunePoint = totalPoint + betPoint;
-    if (fortunePoint >= fortuneData[0].num) {
-      return "ウルトラ大吉";
-    } else if (fortunePoint >= fortuneData[1].num) {
-      return "スーパー大吉";
-    } else if (fortunePoint >= fortuneData[2].num) {
-      return "大吉";
-    } else if (fortunePoint >= fortuneData[3].num) {
-      return "吉";
-    } else if (fortunePoint >= fortuneData[4].num) {
-      return "中吉";
-    } else if (fortunePoint >= fortuneData[5].num) {
-      return "小吉";
-    } else if (fortunePoint >= fortuneData[6].num) {
-      return "末吉";
-    } else if (fortunePoint >= fortuneData[7].num) {
-      return "凶";
-    } else {
-      return "大凶";
-    }
-  };
-
+  const array = fortuneData
+    .map((data) => {
+      if (fortunePoint >= data.num) {
+        return data.name;
+      } else {
+        return "a";
+      }
+    })
+    .filter((data) => data !== "a");
+  //条件に合わせて運勢を返す
   return (
     <>
       <div className="hamburger">
@@ -50,7 +38,7 @@ export const HamburgerMenu: FC<hambergerProps> = ({
             <h2>Infomation</h2>
             <div>
               <h3>現在の運勢</h3>
-              <h2>{fortuneName()}</h2>
+              <h3>{array[0]}</h3>
             </div>
             <div>
               <h3>
