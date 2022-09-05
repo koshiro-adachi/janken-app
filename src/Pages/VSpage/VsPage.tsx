@@ -87,7 +87,11 @@ export const VsPage: FC = () => {
       setLose(false);
       setOpponentHand(answer.opponentHand);
       setWinCount(winCount + 1);
-      setTotalPoint(totalPoint + betPoint * 2);
+      if (winCount === 0 || winCount === 1) {
+        setTotalPoint(totalPoint + betPoint * 2);
+      } else {
+        setTotalPoint(totalPoint + betPoint * 4);
+      }
       setBetPoint(0);
       setFrequency(frequency + 1);
     } else if (answer?.result === "aiko") {
@@ -113,8 +117,8 @@ export const VsPage: FC = () => {
     });
   };
   useEffect(() => {
-    fortune(totalPoint + betPoint, maxWinCount);
-  }, [totalPoint + betPoint, maxWinCount]);
+    fortune(totalPoint, maxWinCount, betPoint);
+  }, [totalPoint + betPoint]);
   //じゃんけんの結果でページ色を変える
 
   const onClickClose = () => setOpen(false);
@@ -194,7 +198,7 @@ export const VsPage: FC = () => {
         </div>
       </div>
       <div className="bottomMessage">
-        <h2 className="winCounter">{`現在${frequency}試合${winCount}勝目です`}</h2>
+        <h2 className="winCounter">{`現在${frequency}試合 連続${winCount}勝`}</h2>
         <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
       </div>
     </>

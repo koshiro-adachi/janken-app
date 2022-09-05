@@ -1,15 +1,19 @@
-export const fortune = (totalPoint: number, maxWinCount: number): string => {
+export const fortune = (
+  totalPoint: number,
+  maxWinCount: number,
+  betPoint: number
+): string => {
   if (maxWinCount === 0) {
     maxWinCount++;
   }
-  const fortunePoint = totalPoint * maxWinCount;
-  if (fortunePoint >= 5000) {
+  const fortunePoint = totalPoint + betPoint * maxWinCount;
+  if (fortunePoint >= 6000) {
     document.body.style.backgroundColor = "rgb(255 234 164)";
     return "ウルトラ大吉";
-  } else if (fortunePoint >= 1000) {
+  } else if (fortunePoint >= 1400) {
     document.body.style.backgroundColor = "rgb(237 255 164)";
     return "スーパー大吉";
-  } else if (fortunePoint >= 250) {
+  } else if (fortunePoint >= 500) {
     document.body.style.backgroundColor = "rgb(189 255 164)";
     return "大吉";
   } else if (fortunePoint >= 200) {

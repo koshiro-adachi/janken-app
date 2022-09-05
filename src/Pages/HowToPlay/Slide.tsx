@@ -13,19 +13,19 @@ export const Slide: FC = () => {
     {
       number: 1,
       name: "ウルトラ大吉",
-      point: "Point >= 5000",
+      point: "Point >= 6000",
       color: "rgb(255 234 164)",
     },
     {
       number: 2,
       name: "スーパー大吉",
-      point: "Point >= 1000",
+      point: "Point >= 1400",
       color: "rgb(237 255 164)",
     },
     {
       number: 3,
       name: "大吉",
-      point: "Point >= 250",
+      point: "Point >= 500",
       color: "rgb(189 255 164)",
     },
     {
@@ -91,8 +91,8 @@ export const Slide: FC = () => {
     <>
       <div className="slideWrapper">
         <h2>運勢の種類</h2>
-        <p>totalPoint × maxWinCount=Point</p>
-        <p>※maxWinCountが0の時はtotalPointの等倍がPointとなる。</p>
+        <p>{"totalPoint + ( betPoint × 2 )※ =Point"}</p>
+        <p>※じゃんけんに2連勝するとbetPointの倍率が4倍になります。</p>
         <div className="slideMain">
           <button onClick={onClickBack}>＜</button>
           <div ref={ref} className="slideBody">
