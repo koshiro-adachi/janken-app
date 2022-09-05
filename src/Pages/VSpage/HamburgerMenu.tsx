@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./hamburgerMenu.css";
 
 export const HamburgerMenu = () => {
@@ -9,6 +9,9 @@ export const HamburgerMenu = () => {
         <label htmlFor="menu-btn-check" className="menu-btn">
           <span></span>
         </label>
+        <div className="menu-content">
+          <p>content</p>
+        </div>
       </div>
     </>
   );

@@ -5,10 +5,11 @@
   display: flex;
   height: 60px;
   width: 60px;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   z-index: 90;
-  background-color: #3584bb;
+  background-color: #505c66;
 }
 .menu-btn span,
 .menu-btn span:before,
@@ -23,11 +24,11 @@
 }
 .menu-btn span:before {
   bottom: 8px;
-}
+} /*上の線*/
 .menu-btn span:after {
   top: 8px;
-}
-#menu-btn-check:checked + .menu-btn span {
+} /*下の線*/
+#menu-btn-check:checked ~ .menu-btn span {
   background-color: rgba(
     255,
     255,
@@ -35,11 +36,28 @@
     0
   ); /*メニューオープン時は真ん中の線を透明にする*/
 }
-#menu-btn-check:checked + .menu-btn span::before {
+#menu-btn-check:checked ~ .menu-btn span::before {
   bottom: 0;
   transform: rotate(45deg);
 }
-#menu-btn-check:checked + .menu-btn span::after {
+#menu-btn-check:checked ~ .menu-btn span::after {
   top: 0;
   transform: rotate(-45deg);
+}
+#menu-btn-check {
+  display: none;
+}
+.menu-content {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  z-index: 80;
+  background-color: #cbcbcb;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+#menu-btn-check:checked ~ .menu-content {
+  right: 0;
 }
