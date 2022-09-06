@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { fortuneArray, fortuneProps } from "../../data/fortuneData";
 import "./hamburgerMenu.css";
 
@@ -28,27 +28,36 @@ export const HamburgerMenu: FC<hambergerProps> = ({
   //条件に合わせて運勢を返す
   const fortuneName = () => {
     if (fortunePoint >= fortuneData[0].num) {
-      return { name: fortuneData[0].name, number: 0 };
+      return fortuneData[0].page;
     } else if (fortunePoint >= fortuneData[1].num) {
-      return { name: fortuneData[1].name, number: 1 };
+      return fortuneData[1].page;
     } else if (fortunePoint >= fortuneData[2].num) {
-      return { name: fortuneData[2].name, number: 2 };
+      return fortuneData[2].page;
     } else if (fortunePoint >= fortuneData[3].num) {
-      return { name: fortuneData[3].name, number: 3 };
+      return fortuneData[3].page;
     } else if (fortunePoint >= fortuneData[4].num) {
-      return { name: fortuneData[4].name, number: 4 };
+      return fortuneData[4].page;
     } else if (fortunePoint >= fortuneData[5].num) {
-      return { name: fortuneData[5].name, number: 5 };
+      return fortuneData[5].page;
     } else if (fortunePoint >= fortuneData[6].num) {
-      return { name: fortuneData[6].name, number: 6 };
+      return fortuneData[6].page;
     } else if (fortunePoint >= fortuneData[7].num) {
-      return { name: fortuneData[7].name, number: 7 };
+      return fortuneData[7].page;
     } else {
-      return { name: fortuneData[8].name, number: 8 };
+      return fortuneData[8].page;
     }
   };
   const fortuneContents = fortuneName();
-  const nextFortuneContent = fortuneData[fortuneContents.number - 1].name;
+  const currentFortune = fortuneData[fortuneContents - 1].name;
+  const nextFortune = fortuneData[fortuneContents - 2].name;
+  const nextFortunePoint = fortuneData[fortuneContents - 2].num;
+  const nextFortuneBetween = () => {
+    let bPoint = 10;
+    while (nextFortunePoint >= bPoint * 2 + totalPoint - bPoint) {
+      bPoint = betPoint + 10;
+    }
+    return bPoint;
+  };
   return (
     <>
       <div className="hamburger">
@@ -61,17 +70,17 @@ export const HamburgerMenu: FC<hambergerProps> = ({
             <h2>Infomation</h2>
             <div>
               <h3>現在の運勢</h3>
-              <h3>{fortuneContents.name}</h3>
+              <h3>{currentFortune}</h3>
             </div>
             <div>
               <h3>
-                {fortuneContents.number === 0 ? (
+                {fortuneContents - 1 === 0 ? (
                   "nai"
                 ) : (
                   <>
-                    betPointを<span></span>にして勝てばに
-                    <span>{nextFortuneContent}</span>
-                    なります
+                    betPointを<span>{}</span>にして勝てば
+                    <span>{nextFortune}</span>
+                    になります
                   </>
                 )}
               </h3>

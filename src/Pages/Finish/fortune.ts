@@ -2,8 +2,22 @@ import { fortuneArray, fortuneProps } from "../../data/fortuneData";
 
 export const fortune = (totalPoint: number, betPoint: number): string => {
   const fortune: Array<fortuneProps> = fortuneArray;
-
   const fortunePoint = totalPoint + betPoint;
+  //   for (let i = 0; i < 8; i++) {
+  //     if ((i = 0)) {
+  //       document.body.style.backgroundColor = fortune[0].color;
+  //       const fortuneName = fortune[0].name;
+  //       return fortuneName;
+  //     } else {
+  //       if (fortune[i].num <= fortunePoint && fortunePoint < fortune[i + 1].num) {
+  //         document.body.style.backgroundColor = fortune[i].color;
+  //         const fortuneName = fortune[i].name;
+  //         return fortuneName;
+  //       }
+  //     }
+  //   }
+  // };
+
   if (fortunePoint >= fortune[0].num) {
     document.body.style.backgroundColor = "rgb(255 234 164)";
     return "ウルトラ大吉";

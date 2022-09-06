@@ -29,6 +29,7 @@ export const ChangeResult: FC<Prop> = ({
   const navi = useNavigate();
 
   const onClickHome = () => {
+    document.body.style.backgroundColor = "#ffffff";
     navi("/");
   };
   //homeに戻る
