@@ -1,30 +1,28 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { fortuneArray, fortuneProps } from "../../data/fortuneData";
+import { fortuneSlideData } from "../../data/fortuneData";
 import "./howToPlay.css";
 
 export const Slide: FC = () => {
-  const fortune: Array<fortuneProps> = fortuneArray;
-
-  const [num, setNum] = useState<number>(0);
+  const [index, setIndex] = useState<number>(0);
   const ref = useRef<HTMLDivElement>(null);
 
   const onClickNext = () => {
-    if (num === 8) {
-      setNum(0);
+    if (index === 8) {
+      setIndex(0);
     } else {
-      setNum(num + 1);
+      setIndex(index + 1);
     }
   };
   const onClickBack = () => {
-    if (num === 0) {
-      setNum(8);
+    if (index === 0) {
+      setIndex(8);
     } else {
-      setNum(num - 1);
+      setIndex(index - 1);
     }
   };
   useEffect(() => {
-    ref.current!.style.backgroundColor = fortune[num].color;
-  }, [num]);
+    ref.current!.style.backgroundColor = fortuneSlideData[index].color;
+  }, [index]);
 
   return (
     <>
@@ -36,10 +34,10 @@ export const Slide: FC = () => {
           <button onClick={onClickBack}>＜</button>
           <div ref={ref} className="slideBody">
             <div className="slideContent">
-              <p>{fortune[num].name}</p>
-              <p>{fortune[num].point}</p>
+              <p>{fortuneSlideData[index].name}</p>
+              <p>{fortuneSlideData[index].description}</p>
             </div>
-            <p className="slidePageNum">{`${fortune[num].page}/9`}</p>
+            <p className="slidePageNum">{`${fortuneSlideData[index].page}/9`}</p>
           </div>
           <button onClick={onClickNext}>＞</button>
         </div>

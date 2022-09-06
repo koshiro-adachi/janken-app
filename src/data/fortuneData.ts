@@ -7,6 +7,12 @@ export type fortuneProps = {
   nextFortune: string;
   nextLowestPoint: number;
 };
+export type fortuneSlideProps = {
+  page: number;
+  name: string;
+  description: string;
+  color: string;
+};
 
 export const fortuneData: Record<string, fortuneProps> = {
   ultraExcellentLuck: {
@@ -113,3 +119,59 @@ export const getFortuneSetting = (fortunePoint: number): fortuneProps => {
     return fortuneData.atrocity;
   }
 };
+export const fortuneSlideData: Array<fortuneSlideProps> = [
+  {
+    page: 1,
+    name: "ウルトラ大吉",
+    description: "Point >= 6000",
+    color: "rgb(255 234 164)",
+  },
+  {
+    page: 2,
+    name: "スーパー大吉",
+    description: "Point >= 1400",
+    color: "rgb(237 255 164)",
+  },
+  {
+    page: 3,
+    name: "大吉",
+    description: "Point >= 500",
+    color: "rgb(189 255 164)",
+  },
+  {
+    page: 4,
+    name: "吉",
+    description: "Point >= 200",
+    color: "rgb(164 255 217)",
+  },
+  {
+    page: 5,
+    name: "中吉",
+    description: "Point >= 150",
+    color: "rgb(164 242 255)",
+  },
+  {
+    page: 6,
+    name: "小吉",
+    description: "Point >= 100",
+    color: "#ffffff",
+  },
+  {
+    page: 7,
+    name: "末吉",
+    description: "Point >= 50",
+    color: "rgb(164 195 255)",
+  },
+  {
+    page: 8,
+    name: "凶",
+    description: "Point >= 10",
+    color: "rgb(186 164 255)",
+  },
+  {
+    page: 9,
+    name: "大凶",
+    description: "Point < 10",
+    color: "rgb(179 179 179)",
+  },
+];
