@@ -59,19 +59,19 @@
   font-weight: 700;
   font-size: 17px;
 }
-/* ---hoe to play--- */
+/* ---how to play--- */
 .slideWrapper {
   text-align: center;
 }
 .slideWrapper h2 {
-  margin: 50px 0 10px 0;
+  margin: 20px 0 10px 0;
 }
 .slideWrapper p {
   margin: 5px 0 5px 0;
   font-weight: 700;
 }
 .slideMain {
-  margin: 40px 0 100px 0;
+  margin: 40px 0 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +80,7 @@
   background-color: white;
   font-weight: 800;
   border-radius: 9999px;
-  height: 150px;
+  height: 120px;
   box-shadow: 0 3px 3px;
   transition: all 0.1s;
 }
@@ -89,8 +89,8 @@
   box-shadow: none;
 }
 .slideBody {
-  width: 500px;
-  height: 200px;
+  width: 70%;
+  height: 150px;
   margin: 0 10px;
   border: solid;
   position: relative;

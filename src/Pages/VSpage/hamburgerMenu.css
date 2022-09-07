@@ -1,3 +1,6 @@
+body {
+  color: #4d4d4d;
+}
 .menu-btn {
   position: fixed;
   top: 10px;
@@ -54,10 +57,32 @@
   top: 0;
   right: -50%;
   z-index: 80;
-  background-color: #cbcbcb;
+  background-color: #d1e0de;
   transition: all 0.5s;
   border-radius: 10px;
 }
 #menu-btn-check:checked ~ .menu-content {
   right: 0;
+}
+.menu-body {
+  text-align: center;
+}
+.menu-body-title {
+  font-size: 2rem;
+  margin: 1rem 5rem;
+  background-color: #ffffff;
+  border-radius: 9999px;
+}
+.currentFortune {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.currentFortune h3 {
+  margin: 1rem 1rem 0;
+  font-size: 1.3rem;
+}
+.menu-body span {
+  font-size: 1.8rem;
+  color: #c96655;
 }

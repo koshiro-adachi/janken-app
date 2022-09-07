@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { getFortuneSetting } from "../../data/fortuneData";
 import "./hamburgerMenu.css";
+import { Slide } from "../HowToPlay/Slide";
 
 type hambergerProps = {
   totalPoint: number;
@@ -15,8 +16,8 @@ export const HamburgerMenu: FC<hambergerProps> = ({
 }) => {
   const fortunePoint = totalPoint + betPoint;
   const fortuneSetting = getFortuneSetting(fortunePoint);
-  const fortuneBetween =
-    fortuneSetting.nextLowestPoint - fortuneSetting.lowestPoint;
+  const fortuneBetween = fortuneSetting.nextLowestPoint - fortunePoint;
+
   const pridictNextFortunePoint = () => {
     if (winCount < 2) {
       return fortuneBetween;
@@ -32,11 +33,13 @@ export const HamburgerMenu: FC<hambergerProps> = ({
           <span></span>
         </label>
         <div className="menu-content">
-          <div>
-            <h2>Infomation</h2>
-            <div>
+          <div className="menu-body">
+            <h2 className="menu-body-title">Infomation</h2>
+            <div className="currentFortune">
               <h3>現在の運勢</h3>
-              <h3>{fortuneSetting.name}</h3>
+              <h3>
+                <span>{`${fortuneSetting.name}`}</span>
+              </h3>
             </div>
             <div>
               <h3>
@@ -53,7 +56,7 @@ export const HamburgerMenu: FC<hambergerProps> = ({
               </h3>
             </div>
             <div>
-              <h3>運勢一覧</h3>
+              <Slide />
             </div>
           </div>
         </div>
