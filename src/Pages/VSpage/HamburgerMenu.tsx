@@ -15,6 +15,15 @@ export const HamburgerMenu: FC<hambergerProps> = ({
 }) => {
   const fortunePoint = totalPoint + betPoint;
   const fortuneSetting = getFortuneSetting(fortunePoint);
+  const fortuneBetween =
+    fortuneSetting.nextLowestPoint - fortuneSetting.lowestPoint;
+  const pridictNextFortunePoint = () => {
+    if (winCount < 2) {
+      return fortuneBetween;
+    } else {
+      return Math.ceil(fortuneBetween / 30) * 10;
+    }
+  };
   return (
     <>
       <div className="hamburger">
@@ -35,7 +44,8 @@ export const HamburgerMenu: FC<hambergerProps> = ({
                   "nai"
                 ) : (
                   <>
-                    betPointを<span>{}</span>にして勝てば
+                    betPointを<span>{pridictNextFortunePoint()}</span>
+                    にして勝てば
                     <span>{fortuneSetting.nextFortune}</span>
                     になります
                   </>
