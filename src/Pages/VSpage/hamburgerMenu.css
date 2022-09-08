@@ -1,0 +1,137 @@
+body {
+  color: #4d4d4d;
+}
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #505c66;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+} /*上の線*/
+.menu-btn span:after {
+  top: 8px;
+} /*下の線*/
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+#menu-btn-check {
+  display: none;
+}
+.menu-content {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  z-index: 80;
+  background-color: #d1e0de;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+#menu-btn-check:checked ~ .menu-content {
+  right: 0;
+}
+.menu-body {
+  text-align: center;
+}
+.menu-body-title {
+  font-size: 2rem;
+  margin: 1rem 5rem;
+  background-color: #ffffff;
+  border-radius: 9999px;
+}
+.currentFortune {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.currentFortune h3 {
+  margin: 1rem 1rem 0;
+  font-size: 1.3rem;
+}
+.menu-body span {
+  font-size: 1.8rem;
+  color: #c96655;
+}
+@media screen and (max-width: 800px) {
+  .menu-content {
+    width: 100%;
+    right: -100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+  }
+  .currentFortune h3 {
+    font-size: 1rem;
+  }
+  .pridictMessage {
+    font-size: 1rem;
+  }
+  .menu-body span {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 366px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+  }
+  .currentFortune h3 {
+    font-size: 1rem;
+  }
+  .pridictMessage {
+    font-size: 1rem;
+  }
+  .menu-body span {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 310px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+    margin: 1rem 3rem;
+  }
+  .currentFortune h3 {
+    font-size: 0.8rem;
+  }
+  .pridictMessage {
+    font-size: 0.8rem;
+  }
+  .menu-body span {
+    font-size: 0.8rem;
+  }
+}
