@@ -86,3 +86,52 @@ body {
   font-size: 1.8rem;
   color: #c96655;
 }
+@media screen and (max-width: 800px) {
+  .menu-content {
+    width: 100%;
+    right: -100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+  }
+  .currentFortune h3 {
+    font-size: 1rem;
+  }
+  .pridictMessage {
+    font-size: 1rem;
+  }
+  .menu-body span {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 366px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+  }
+  .currentFortune h3 {
+    font-size: 1rem;
+  }
+  .pridictMessage {
+    font-size: 1rem;
+  }
+  .menu-body span {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 310px) {
+  .menu-body-title {
+    font-size: 1.5rem;
+    margin: 1rem 3rem;
+  }
+  .currentFortune h3 {
+    font-size: 0.8rem;
+  }
+  .pridictMessage {
+    font-size: 0.8rem;
+  }
+  .menu-body span {
+    font-size: 0.8rem;
+  }
+}

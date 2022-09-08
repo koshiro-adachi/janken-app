@@ -65,6 +65,7 @@
 }
 .slideWrapper h2 {
   margin: 20px 0 10px 0;
+  font-size: 1.3rem;
 }
 .slideWrapper p {
   margin: 5px 0 5px 0;
@@ -108,7 +109,11 @@
   transform: translate(-50%, -50%);
 }
 /* ---slide--- */
-
+@media screen and (max-width: 930px) {
+  .slideWrapper p {
+    font-size: 0.9rem;
+  }
+}
 @media screen and (max-width: 630px) {
   .howToPlayMain h2 {
     font-size: 1.2rem;
@@ -135,13 +140,13 @@
   .slideMain button {
     height: 120px;
   }
+  .slideWrapper h2 {
+    font-size: 1rem;
+  }
 }
 @media screen and (max-width: 333px) {
   .slideWrapper p {
     font-size: 13px;
-  }
-  .slideWrapper h2 {
-    font-size: 20px;
   }
   .howToPlayMain h2 {
     padding: 3px 20px;
@@ -165,5 +170,8 @@
   }
   .slideWrapper h2 {
     font-size: 17px;
+  }
+  .slideWrapper h2 {
+    font-size: 0.8rem;
   }
 }

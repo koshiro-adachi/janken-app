@@ -42,18 +42,18 @@ export const HamburgerMenu: FC<hambergerProps> = ({
               </h3>
             </div>
             <div>
-              <h3>
+              <div>
                 {fortuneSetting.page === 1 ? (
                   "nai"
                 ) : (
-                  <>
+                  <h3 className="pridictMessage">
                     betPointを<span>{pridictNextFortunePoint()}</span>
                     にして勝てば
                     <span>{fortuneSetting.nextFortune}</span>
                     になります
-                  </>
+                  </h3>
                 )}
-              </h3>
+              </div>
             </div>
             <div>
               <Slide />
