@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { getFortuneSetting } from "../../data/fortuneData";
 import "./hamburgerMenu.css";
 import { Slide } from "../HowToPlay/Slide";
