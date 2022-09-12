@@ -363,4 +363,7 @@
   .changeImageWrapper h2 {
     font-size: 20px;
   }
+  .changeButton {
+    font-size: 1rem;
+  }
 }
