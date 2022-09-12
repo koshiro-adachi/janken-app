@@ -202,7 +202,7 @@ export const VsPage: FC = () => {
         </div>
       </div>
       <div className="bottomMessage">
-        <h2 className="winCounter">{`現在${frequency}試合 連続${winCount}勝`}</h2>
+        <h2 className="winCounter">{`現在${frequency}/5試合 連続${winCount}勝`}</h2>
         <h2 className="winCounter">{`最大連続勝利回数　${maxWinCount}回`}</h2>
       </div>
     </>
