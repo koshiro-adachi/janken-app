@@ -54,6 +54,7 @@ export const VsPage: FC = () => {
     }
   }, [winCount]);
   //winCountに応じてmaxWinCountを更新
+
   if (frequency === 5) {
     gubuttonElement.current!.style.boxShadow = "0px 0px 0px";
     gubuttonElement.current!.style.backgroundColor = "rgb(139,139,139)";
@@ -170,6 +171,7 @@ export const VsPage: FC = () => {
               setTotalPoint={setTotalPoint}
               betPoint={betPoint}
               setBetPoint={setBetPoint}
+              aiko={aiko}
             />
           </div>
           <div className="buttonWrapper">
