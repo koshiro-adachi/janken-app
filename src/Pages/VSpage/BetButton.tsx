@@ -5,11 +5,15 @@ type Prop = {
   setTotalPoint: Dispatch<SetStateAction<number>>;
   betPoint: number;
   setBetPoint: Dispatch<SetStateAction<number>>;
+  aiko: boolean;
 };
 
 export const BetButton: FC<Prop> = memo(
-  ({ totalPoint, setTotalPoint, betPoint, setBetPoint }) => {
+  ({ totalPoint, setTotalPoint, betPoint, setBetPoint, aiko }) => {
     const onClickPlusBet = () => {
+      if (aiko) {
+        return;
+      }
       if (totalPoint === 0) {
         return;
       } else {
@@ -18,6 +22,9 @@ export const BetButton: FC<Prop> = memo(
       }
     };
     const onClickMinusBet = () => {
+      if (aiko) {
+        return;
+      }
       if (betPoint === 0) {
         return;
       } else {
