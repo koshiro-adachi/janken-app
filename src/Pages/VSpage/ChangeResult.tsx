@@ -1,4 +1,5 @@
-import { FC, RefObject } from "react";
+import { toASCII } from "punycode";
+import { FC, RefObject, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Prop = {
@@ -45,6 +46,19 @@ export const ChangeResult: FC<Prop> = ({
     });
   };
   //終了して結果ページに遷移
+
+  useEffect(() => {
+    if (betPoint + totalPoint === 0) {
+      navi("/finish", {
+        state: {
+          maxWinCount: maxWinCount,
+          totalPoint: totalPoint,
+          betPoint: betPoint,
+          frequency: frequency,
+        },
+      });
+    }
+  }, [betPoint + totalPoint]);
 
   const opponentHandImage = (): string => {
     if (opponentHand === 1) {
